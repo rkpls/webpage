@@ -32,10 +32,10 @@ p {
 
 a {
 color: #fff
-
+text-decoration: none;
 }
 
-button {
+.buttonT1{
 cursor: pointer;
 background-color: darkblue;
 color: white;
