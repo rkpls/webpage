@@ -35,6 +35,12 @@ color: #fff
 
 }
 
+button {
+background-color: darkblue;
+color: white;
+
+}
+
 footer {
     text-align: center;
     padding: 1em;
