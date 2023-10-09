@@ -38,6 +38,11 @@ color: #fff
 button {
 background-color: darkblue;
 color: white;
+border-color: darkblue;
+border-radius: 8px;
+height: 36px;
+width: 104px;
+
 
 }
 
