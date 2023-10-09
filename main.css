@@ -5,12 +5,66 @@ body {
     background-color: #f0f0f0;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 header {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 1em;
 }
+
+
+.logo {
+    float: left;
+    font-size: 1.5em;
+}
+
+nav {
+    float: right;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Responsive Styles für Mobilgeräte */
+@media only screen and (max-width: 768px) {
+    .logo, nav {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .menu li {
+        display: block;
+        margin: 0;
+        text-align: center;
+    }
+}
+
 
 section {
     max-width: 800px;
