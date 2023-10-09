@@ -10,6 +10,7 @@ header {
     color: #fff;
     width: 100%;
     top: 0;
+    padding: 1em;
     text-align: center; 
     position: fixed;
 }
