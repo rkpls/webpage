@@ -36,6 +36,7 @@ color: #fff
 }
 
 button {
+cursor: pointer;
 background-color: darkblue;
 color: white;
 border-color: darkblue;
