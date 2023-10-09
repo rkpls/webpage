@@ -24,7 +24,14 @@ section {
 }
 
 h1 {
-    color: #333;
+    color: white;
+    text-align: left;
+    padding-left: 32px;
+}
+
+h2 {
+    color: black;
+    text-align: center;
 }
 
 p {
@@ -32,17 +39,17 @@ p {
     color: #555;
 }
 
-a {
-color: white 
-transition: color 0.5s;
+.linkext{
+    color: white 
+    transition: color 0.5s;
 }
 
-a:hover{
-color: lightgrey;
+.linkext:hover{
+    color: lightgrey;
 }
 
-a:active{
-color: lightgrey;
+.linkext:active{
+    color: lightgrey;
 }
 
 
