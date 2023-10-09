@@ -38,14 +38,13 @@ color: white;
 .buttonT1{
 cursor: pointer;
 background-color: darkblue;
+font-weight: bold;
 color: white;
 border-color: darkblue;
 border-radius: 8px;
 margin: 8px;
 height: 36px;
 width: 104px;
-
-
 }
 
 footer {
