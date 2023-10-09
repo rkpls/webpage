@@ -16,7 +16,7 @@ header {
 }
 
 section {
-    width: 80%:
+    width: 80%;
     margin: 2em auto;
     padding: 2em;
     background-color: #fff;
@@ -40,7 +40,7 @@ p {
 }
 
 .linkext{
-    color: white 
+    color: white;
     transition: color 0.5s;
     text-decoration: none;
 }
@@ -62,7 +62,7 @@ border-radius: 8px;
 padding: 12px;
 vertical-align: top;
 box-shadow: 6px 4px 4px rgba(0,0,0,0.2);
-transition: opacity 0.5s 
+transition: opacity 0.5s;
 transition: box-shadow 0.1s;
 }
 
@@ -84,7 +84,7 @@ border-radius: 4px;
 padding: 8px;
 vertical-align: top;
 transition: background-color 0.5s;
-tansition: color 0.5s;
+transition: color 0.5s;
 }
 
 .buttonT2:hover {
