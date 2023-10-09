@@ -48,6 +48,7 @@ background-color: darkblue;
 border-color: darkblue;
 border-radius: 8px;
 padding: 12px;
+vertical-align: top;
 box-shadow: 6px 4px 4px rgba(0,0,0,0.2);
 transition: opacity 0.5s 
 transition: box-shadow 0.1s;
@@ -69,6 +70,7 @@ background-color: orange;
 border-color: orange;
 border-radius: 4px;
 padding: 8px;
+vertical-align: top;
 transition: background-color 0.5s;
 tansition: color 0.5s;
 }
