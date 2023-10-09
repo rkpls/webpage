@@ -42,6 +42,7 @@ p {
 .linkext{
     color: white 
     transition: color 0.5s;
+    text-decoration: none;
 }
 
 .linkext:hover{
