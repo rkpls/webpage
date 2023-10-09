@@ -47,9 +47,7 @@ cursor: pointer;
 background-color: darkblue;
 border-color: darkblue;
 border-radius: 8px;
-margin: 8px;
-height: 36px;
-width: 104px;
+padding: 12px;
 box-shadow: 6px 4px 4px rgba(0,0,0,0.2);
 transition: opacity 0.5s 
 transition: box-shadow 0.1s;
@@ -70,9 +68,7 @@ cursor: pointer;
 background-color: orange;
 border-color: orange;
 border-radius: 4px;
-margin: 4px;
-height: 24px;
-width: 78px;
+padding: 8px;
 transition: background-color 0.5s;
 tansition: color 0.5s;
 }
