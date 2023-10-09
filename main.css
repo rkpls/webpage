@@ -37,8 +37,12 @@ color: white
 transition: color 0.5s;
 }
 
+a:hover{
+color: lightgrey;
+}
+
 a:active{
-color: lightgrey
+color: lightgrey;
 }
 
 
