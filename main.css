@@ -180,3 +180,23 @@ button{
     background-image: url("./icons/Youtube.png");    
     background-size: 48px;
 }
+
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: none;
+}
+
+#cookie-banner button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
