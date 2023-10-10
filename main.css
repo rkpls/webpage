@@ -17,7 +17,7 @@ header {
     color: white;
     position: fixed;
     top: 0;
-    width: 100%;    
+    width: 100%;
 }
 
 footer {
@@ -37,6 +37,23 @@ div{
     padding: 2em;
     background-color: white;
     border-radius: 12px;
+}
+
+h1 {
+    width: 80%;
+    color: white;
+    text-align: left;
+    padding-left: 32px;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+}
+
+p {
+    line-height: 1.6;
+    color: #333;
 }
 
 tr{
@@ -62,23 +79,6 @@ a:hover{
 
 a:active{
     color: lightgray;    
-}
-
-
-h1 {
-    color: white;
-    text-align: left;
-    padding-left: 32px;
-}
-
-h2 {
-    color: black;
-    text-align: center;
-}
-
-p {
-    line-height: 1.6;
-    color: #333;
 }
 
 .linkext{
@@ -138,11 +138,6 @@ p {
     color: orange;
 }
 
-.socials{
-    padding: 1em;
-    top: 24px;
-}
-
 button{
     border-radius: 30%;
     width: 48px;
@@ -174,4 +169,14 @@ button{
     background-image: url("./icons/Twitter.jpg");    
     background-size: 48px;
 
+}
+
+.fa-spoutible{
+    background-image: url("./icons/Spoutible.jpg");    
+    background-size: 48px;
+}
+
+.fa-youtube{
+    background-image: url("./icons/Youtube.png");    
+    background-size: 48px;
 }
