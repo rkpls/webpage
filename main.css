@@ -31,11 +31,12 @@ footer {
 }
 
 div{
+    border: 24px;
     width: 80%;
     margin: 2em auto;
     padding: 2em;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 tr{
@@ -138,8 +139,8 @@ p {
 }
 
 .socials{
-    margin-bottom: 5px;
     padding: 1em;
+    top: 24px;
 }
 
 button{
