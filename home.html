@@ -76,8 +76,8 @@
     </tr>
 
     <div id="cookie-banner">
-        <p>No cookies yet. Probably later.</p>
-        <button onclick="acceptCookies()">Be Gone!</button>
+        <p>Cookies store some bytes on your device. The funtion behind this window does.</p>
+        <button class="cookie" onclick="acceptCookies()">Ok, now be gone!</button>
     </div>
 </footer>
 </body>
@@ -88,7 +88,7 @@
     }
     function acceptCookies() {
         localStorage.setItem('cookiesAccepted', 'true');
-        document.getElementById('cookie-banner').style.display = 'block';
+        document.getElementById('cookie-banner').style.display = 'none';
     }
 </script>
 

@@ -13,7 +13,7 @@ body {
 header {
     text-align: center;
     padding: 1em;
-    background-color: #333;
+    background-color: #252525;
     color: white;
     position: fixed;
     top: 0;
@@ -23,8 +23,8 @@ header {
 footer {
     text-align: center;
     padding: 1em;
-    background-color: #333;
-    color: #fff;
+    background-color: #252525;
+    color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -53,7 +53,7 @@ h2 {
 
 p {
     line-height: 1.6;
-    color: #333;
+    color: white;
 }
 
 tr{
@@ -142,7 +142,7 @@ button{
     border-radius: 30%;
     width: 48px;
     height: 48px;
-    background-color: #333;
+    background-color: #252525;
     border: black;
     border: 2px;
     margin-left: 12px;
@@ -181,22 +181,33 @@ button{
     background-size: 48px;
 }
 
+.cookie{
+    border-radius: 12px;
+    width: 92px;
+    height: 48px;
+    border: 2px;
+    margin-left: 12px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
 #cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
-    background-color: #333;
+    width: 30%;
+    background-color: #252525;
     color: #fff;
     padding: 10px;
     text-align: center;
     display: none;
+    border: 12px;
+    border-color: #505050;
+    border-radius: 5%;
 }
 
 #cookie-banner button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
+    background-color: #81BEF7;
+    color: black;
     cursor: pointer;
 }
