@@ -1,10 +1,11 @@
 
 html{
     cursor: default;
+    overflow: hidden;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #81BEF7;
@@ -56,8 +57,12 @@ p {
     color: white;
 }
 
-tr{
+td{
     text-align: center;
+}
+
+th{
+    padding: 8px;
 }
 
 .th-right{
