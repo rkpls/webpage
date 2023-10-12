@@ -1,6 +1,7 @@
 
 html{
     cursor: default;
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -15,23 +16,23 @@ body {
 }
 
 header {
+    position: fixed;    
     z-index: 2;
     text-align: center;
     padding: 1em;
     background-color: #252525;
     color: white;
-    position: fixed;
     top: 0;
     width: 100%;
 }
 
 footer {
+    position: fixed;
     z-index: 2;
     text-align: center;
     padding: 1em;
     background-color: #252525;
     color: white;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -41,44 +42,62 @@ div{
 }
 
 #sidebar {
-    position: absolute;    
+    position: fixed;    
     height: 100%;
     width: 5px;
     border: 0px;
-    z-index: 1;
+    z-index: 4;
     left: 0;
-    background-color: #101010;
+    background-color: black;
     overflow: hidden;
     transition: width 0.5s;
-    color: white;
+    color: #00000000;
   }
 
 #sidebar:hover{
-    width: 10%;
+    width: 20%;
+    margin: auto;
 }
+
+.sidebarmenu{
+    overflow: hidden;
+    padding-left: 10px;
+    margin-top: 120px;
+}
+
 .link-sidebar{
     overflow: hidden;
-    padding: 1em;
+    padding-top: 2em;
     text-align: center;
-    position: relative;
 }
 
 .content{
     position: relative;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 10px 10px 20px 20px;
     border: 24px;
     width: 80%;
     background-color: white;
     border-radius: 12px;
 }
 
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
 th{
     padding: 8px;
 }
 
-#th-right{
+.th-right{
     text-align: right;
 }
-#th-left{
+.th-left{
     text-align: left;
 }
 
@@ -108,6 +127,10 @@ a:active{
 
 .linkext:active{
     color: lightgrey;
+}
+
+.linkcontent {
+    color: black;
 }
 
 
@@ -164,33 +187,33 @@ button{
     cursor: pointer;
 }
 
-#fa-linkedin{
+.fa-linkedin{
     background-image: url("./icons/LinkedIn.png");
     background-size: 48px;
 }
 
-#fa-threads{
+.fa-threads{
     background-image: url("./icons/Threads.jpg");
     background-size: 48px;
 }
 
-#fa-instagram{
+.fa-instagram{
     background-image: url("./icons/Instagram.jpg");   
     background-size: 48px;
 }
 
-#fa-twitter{
+.fa-twitter{
     background-image: url("./icons/Twitter.jpg");    
     background-size: 48px;
 
 }
 
-#fa-spoutible{
+.fa-spoutible{
     background-image: url("./icons/Spoutible.jpg");    
     background-size: 48px;
 }
 
-#fa-youtube{
+.fa-youtube{
     background-image: url("./icons/Youtube.png");    
     background-size: 48px;
 }

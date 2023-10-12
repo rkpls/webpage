@@ -5,14 +5,6 @@ if (!localStorage.getItem('cookiesAccepted')) {
 
 function acceptCookies() {
     localStorage.setItem('cookiesAccepted', 'true');
-    document.getElementById('cookie-banner').style.display = 'none';
+    document.getElementById('cookie-banner').style.display = 'block';
 }
-
-function closedNav() {
-    document.getElementById("sidebar").style.dispay = "none";
-  }
-
-function openedNav() {
-    document.getElementById("sidebar").style.display = "block";
-  }
 
