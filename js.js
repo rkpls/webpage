@@ -5,6 +5,6 @@ if (!localStorage.getItem('cookiesAccepted')) {
 
 function acceptCookies() {
     localStorage.setItem('cookiesAccepted', 'true');
-    document.getElementById('cookie-banner').style.display = 'block';
+    document.getElementById('cookie-banner').style.display = 'hidden';
 }
 

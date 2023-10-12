@@ -5,175 +5,84 @@ html{
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
+    height: 0;
     background: transparent;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    z-index: 0;
-    background-color: #4a7fb4;
-}
-
 header {
-    position: fixed;    
     z-index: 2;
-    text-align: center;
-    padding: 1em;
     background-color: #252525;
     color: white;
-    top: 0;
+    padding: 1em;
+    text-align: center;
+    position: sticky;
     width: 100%;
+    top: 0;
 }
 
 footer {
-    position: fixed;
     z-index: 2;
-    text-align: center;
-    padding: 1em;
     background-color: #252525;
     color: white;
-    bottom: 0;
+    padding: 1em;
+    text-align: center;
+    position: fixed;
     width: 100%;
+    bottom: 0;
+}
+
+body {
+    z-index: 0;    
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #203040;
 }
 
 div{
     margin: auto;
 }
 
-#sidebar {
-    position: fixed;    
-    height: 100%;
-    width: 5px;
-    border: 0px;
-    z-index: 4;
+.menu{
+    z-index: 1;
     left: 0;
-    background-color: black;
-    overflow: hidden;
-    transition: width 0.5s;
-    color: #00000000;
-  }
-
-#sidebar:hover{
-    width: 20%;
-    margin: auto;
-}
-
-.sidebarmenu{
-    overflow: hidden;
-    padding-left: 10px;
-    margin-top: 120px;
-}
-
-.link-sidebar{
-    overflow: hidden;
-    padding-top: 2em;
+    background-color: #202020;
+    position: absolute;
+    height: 100%;
     text-align: center;
+    padding: 0;
+    min-width: 5%;
+    transition: min-width 0.5s;
+}
+.menu:hover{
+    min-width: 20%;
+}
+
+.menucontent{
+
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    transition: color 0.5s;
+}
+a:hover{
+    color: rgb(150, 150, 150);
 }
 
 .content{
     position: relative;
     margin-top: 12px;
     margin-bottom: 12px;
-    padding: 10px 10px 20px 20px;
+    padding: 16px;
     border: 24px;
     width: 80%;
-    background-color: white;
+    background-color: #ccc;
     border-radius: 12px;
-}
-
-h1{
-    text-align: center;
-}
-
-h2{
-    text-align: center;
-}
-
-th{
-    padding: 8px;
-}
-
-.th-right{
-    text-align: right;
-}
-.th-left{
-    text-align: left;
-}
-
-a{
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-a:hover{
-    color: white;    
-}
-
-a:active{
-    color: lightgray;    
-}
-
-.linkext{
-    color: white;
-    transition: color 0.5s;
-    text-decoration: none;
-}
-
-.linkext:hover{
-    color: lightgrey;
-}
-
-.linkext:active{
-    color: lightgrey;
-}
-
-.linkcontent {
-    color: black;
-}
-
-
-.buttonT1{
-    cursor: pointer;
-    background-color: darkblue;
-    border-color: darkblue;
-    border-radius: 8px;
-    padding: 12px;
-    vertical-align: top;
-    box-shadow: 6px 4px 4px rgba(0,0,0,0.2);
-    transition: opacity 0.5s;
-    transition: box-shadow 0.1s;
-}
-
-.buttonT1:hover {
-    opacity: 0.7;
-    box-shadow: 6px 4px 4px rgba(0,0,0,0.13);
-}
-
-.buttonT1:active {
-    opacity: 0.5;
-    box-shadow: 3px 2px 2px rgba(0,0,0,0.1);
-}
-
-.buttonT2{
-    cursor: pointer;
-    background-color: orange;
-    border-color: orange;
-    border-radius: 4px;
-    padding: 8px;
-    vertical-align: top;
-    transition: background-color 0.5s;
-    transition: color 0.5s;
-}
-
-.buttonT2:hover {
-    background-color: white;
-    color: orange;
-}
-
-.buttonT2:active {
-    color: orange;
 }
 
 button{
@@ -186,6 +95,8 @@ button{
     margin: 12px;
     cursor: pointer;
 }
+
+
 
 .fa-linkedin{
     background-image: url("./icons/LinkedIn.png");
@@ -216,35 +127,4 @@ button{
 .fa-youtube{
     background-image: url("./icons/Youtube.png");    
     background-size: 48px;
-}
-
-.cookie{
-    border-radius: 12px;
-    width: 92px;
-    height: 48px;
-    border: 2px;
-    margin-left: 12px;
-    margin-right: 12px;
-    cursor: pointer;
-}
-
-#cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 30%;
-    background-color: #252525;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    display: none;
-    border: 12px;
-    border-color: #505050;
-    border-radius: 5%;
-}
-
-#cookie-banner button {
-    background-color: #81BEF7;
-    color: black;
-    cursor: pointer;
 }
