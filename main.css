@@ -1,19 +1,21 @@
 
 html{
     cursor: default;
-    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     z-index: 0;
-    margin: 0;
-    padding: 0;
-    background-color: #81BEF7;
+    background-color: #4a7fb4;
 }
 
 header {
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     padding: 1em;
     background-color: #252525;
@@ -24,7 +26,7 @@ header {
 }
 
 footer {
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     padding: 1em;
     background-color: #252525;
@@ -35,67 +37,39 @@ footer {
 }
 
 div{
-    border: 24px;
-    width: 80%;
-    margin: 2em auto;
-    padding: 2em;
-    background-color: white;
-    border-radius: 12px;
-}
-
-h1 {
-    width: 80%;
-    color: white;
-    text-align: left;
-    padding-left: 32px;
-}
-
-h2 {
-    color: black;
-    text-align: center;
-}
-
-p {
-    line-height: 1.6;
-    color: white;
-}
-
-td{
-    text-align: center;
+    margin: auto;
 }
 
 #sidebar {
+    position: absolute;    
     height: 100%;
-    width: 0;
+    width: 5px;
     border: 0px;
-    position: fixed;
     z-index: 1;
     left: 0;
-    top: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+    background-color: #101010;
+    overflow: hidden;
+    transition: width 0.5s;
     color: white;
   }
 
-  #sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
+#sidebar:hover{
+    width: 10%;
+}
+.link-sidebar{
+    overflow: hidden;
+    padding: 1em;
+    text-align: center;
+    position: relative;
+}
 
-  #sidebar a:hover {
-    color: #f1f1f1;
-  }
-
-  #main {
-    transition: margin-left .5s;
-    padding: 16px;
-  }
+.content{
+    position: relative;
+    border: 24px;
+    width: 80%;
+    background-color: white;
+    border-radius: 12px;
+}
 
 th{
     padding: 8px;

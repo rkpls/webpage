@@ -11,23 +11,26 @@
     <link rel="icon" href="./icons/RP.PNG">
 </head>
 
-<body>
+<body onmouseover="closedNav()">
+
 <header>
     <h1> RP </h1>
 </header>
 
-<div id="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="#">A</a>
-    <a href="#">B</a>
-    <a href="#">C</a>
+
+
+<div id="sidebar" onmouseover="openedNav()">
+        <a href="#" class="link-sidebar">A</a>
+        <br>
+        <a href="#" class="link-sidebar">B</a>
+        <br>
+        <a href="#" class="link-sidebar">C</a>
+        <br>
 </div>
 
-<div>
-</div>
 
-<div class="socials">
 
+<div class="content">
     <td>
         <th>
             <a href="https://www.linkedin.com/in/riko-pals-554a691b5" target="blank" >
@@ -57,6 +60,8 @@
     </td>
 </div>
 
+
+
 <footer>
     <tr>
         <th id="th-right">
@@ -83,5 +88,6 @@
         <button class="cookie" onclick="acceptCookies()">Ok, now be gone!</button>
     </div>
 </footer>
+
 </body>
 </html>

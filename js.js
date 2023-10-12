@@ -8,12 +8,11 @@ function acceptCookies() {
     document.getElementById('cookie-banner').style.display = 'none';
 }
 
-function openNav() {
-    document.getElementById("sidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
+function closedNav() {
+    document.getElementById("sidebar").style.dispay = "none";
   }
 
-function closeNav() {
-    document.getElementById("sidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
+function openedNav() {
+    document.getElementById("sidebar").style.display = "block";
   }
+
