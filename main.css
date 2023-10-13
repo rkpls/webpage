@@ -10,11 +10,16 @@ html{
     background: transparent;
 }
 
+::placeholder{
+    color: black;
+    opacity: 0.5;
+}
+
 header {
     z-index: 2;
-    background-color: #252525;
+    background-color: #202020;
     color: white;
-    padding: 1em;
+    padding: 0.5em;
     text-align: center;
     position: sticky;
     width: 100%;
@@ -23,8 +28,9 @@ header {
 
 footer {
     z-index: 2;
-    background-color: #252525;
+    background-color: #202020;
     color: white;
+    font-size: smaller;
     padding: 1em;
     text-align: center;
     position: fixed;
@@ -48,7 +54,7 @@ div{
 .menu{
     z-index: 1;
     left: 0;
-    background-color: #202020;
+    background-color: #252525;
     position: absolute;
     height: 100%;
     text-align: center;
@@ -60,11 +66,6 @@ div{
     min-width: 20%;
 }
 
-.menucontent{
-
-
-}
-
 a{
     text-decoration: none;
     color: white;
@@ -73,6 +74,17 @@ a{
 a:hover{
     color: rgb(150, 150, 150);
 }
+
+input{
+    all: unset;
+    background-color: white;
+    text-align: left;
+    color: black;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border-color: #00000000;
+}
+
 
 .content{
     position: relative;
