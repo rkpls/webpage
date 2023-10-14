@@ -58,10 +58,6 @@ div{
     margin: auto;
 }
 
-iframe{
-    padding: 48px;
-}
-
 .menu{
     z-index: 1;
     left: 0;
