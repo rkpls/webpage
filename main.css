@@ -38,18 +38,29 @@ footer {
     bottom: 0;
 }
 
+.footerLink{
+    text-decoration: none;
+    color: white;
+}
+
 body {
     z-index: 0;
     height: auto;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    padding-bottom: 10%;
     text-align: center;
     background-color: #203040;
+
 }
 
 div{
     margin: auto;
+}
+
+iframe{
+    padding: 48px;
 }
 
 .menu{
@@ -60,16 +71,19 @@ div{
     height: 100%;
     text-align: center;
     padding: 0;
-    min-width: 5%;
-    transition: min-width 0.5s;
+    width: auto;
+    transition: 0.5s;
 }
-.menu:hover{
-    min-width: 20%;
+
+.linkMenu{
+    text-decoration: none;
+    color: white;
+    padding: 12px;
 }
 
 a{
     text-decoration: none;
-    color: white;
+    color: black;
     transition: color 0.5s;
 }
 a:hover{
