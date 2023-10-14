@@ -16,7 +16,7 @@ html{
 }
 
 header {
-    z-index: 2;
+    z-index: 10;
     background-color: #202020;
     color: white;
     padding: 0.5em;
@@ -27,7 +27,7 @@ header {
 }
 
 footer {
-    z-index: 2;
+    z-index: 10;
     background-color: #202020;
     color: white;
     font-size: smaller;
@@ -52,7 +52,6 @@ body {
     padding-bottom: 10%;
     text-align: center;
     background-color: #203040;
-
 }
 
 div{
@@ -66,9 +65,10 @@ iframe{
 .menu{
     z-index: 1;
     left: 0;
+    top: 10%;
     background-color: #252525;
     position: absolute;
-    height: 100%;
+    height: max-content;
     text-align: center;
     padding: 0;
     width: auto;
