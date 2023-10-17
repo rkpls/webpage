@@ -1,7 +1,9 @@
 
+
 html{
     cursor: default;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -15,21 +17,85 @@ html{
     opacity: 0.5;
 }
 
+:root {
+  --white: white;
+  --black: black;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --lightColored: ;
+  --darkColored: #203040;
+  --lightColored: #6080a0;
+}
+
+.dark-mode{
+    background-color: var(--dark);
+    color: var(--white);
+}
+.light-mode{
+    background-color: var(--light);
+    color: var(--black);
+}
+
 header {
     z-index: 2;
-    background-color: #202020;
-    color: white;
     padding: 0.5em;
     text-align: center;
     position: relative;
     width: 100%;
     top: 0;
+    display: flex;
+    background-color: var(--black);
 }
+
+.toggleSwitch{
+    width: 120px;
+    background-color: var(--light);
+}
+label {
+  position: absolute;
+  height: 48px;
+  background-color: var(--dark);
+  border-radius: 24px;
+}
+input{
+    position: absolute;
+    display: none;
+}
+.slider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25%;
+    transition: 0.2s;
+}
+input:checked ~ .slider {
+    background-color: var(--light);
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: inset 28px -4px 0px 0px var(--light);
+    background-color: var(--dark);
+    transition: 0.3s;
+  }
+  
+  input:checked ~ .slider::before {
+    transform: translateX(95px);
+    background-color: var(--dark);
+    box-shadow: none;
+  }
+
 
 footer {
     z-index: 2;
-    background-color: #202020;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
     font-size: smaller;
     padding: 1em;
     text-align: center;
@@ -44,8 +110,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100%;
-    text-align: center;
-    background-color: #203040;
+    background-color: var(--darkColored);
 }
 
 div{
@@ -53,18 +118,21 @@ div{
     display: flex;
     overflow: auto;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
 }
 
 .menu{
     z-index: 1;
     left: 0;
-    background-color: #252525;
+    background-color: var(--dark);
     position: absolute;
     height: 100%;
     text-align: center;
     padding: 0;
     min-width: 5%;
-    transition: min-width 0.5s;
+    transition: 0.5s;
 }
 .menu:hover{
     min-width: 20%;
@@ -72,7 +140,7 @@ div{
 
 a{
     text-decoration: none;
-    color: white;
+    color: var(--white);
     transition: color 0.5s;
 }
 a:hover{
@@ -85,12 +153,17 @@ a:hover{
     margin-top: 48px;
     padding: 16px;
     width: 80%;
-    background-color: #ccc;
+    background-color: var(--light);
     border-radius: 12px;
 }
 
+h1{
+    padding-left: 4em;
+    color: var(--white);
+}
 h2{
     padding-left: 2em;
+    color: var(--black);
 }
 
 .content{
@@ -98,13 +171,13 @@ h2{
     overflow: auto;
     display: inline-flex;
     flex-wrap: wrap;
+    word-wrap: break-word;
 }
 
 button{
     width: 48px;
     height: 48px;
     margin: 12px;
-    background-color: #252525;
     border-radius: 24%;
     border-color: transparent;
     cursor: pointer;
@@ -114,7 +187,7 @@ button{
     background-size: 50px;
 }
 button:hover{
-    transform: translate3d(-0.2em);
+    transform: translateY(-0.2em);
 }
 
 
