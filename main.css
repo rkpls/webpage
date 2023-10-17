@@ -21,7 +21,7 @@ header {
     color: white;
     padding: 0.5em;
     text-align: center;
-    position: sticky;
+    position: relative;
     width: 100%;
     top: 0;
 }
@@ -39,16 +39,18 @@ footer {
 }
 
 body {
-    z-index: 0;    
+    z-index: 0;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100%;
     text-align: center;
     background-color: #203040;
 }
 
 div{
     margin: auto;
+    display: flex;
 }
 
 .menu{
@@ -75,21 +77,9 @@ a:hover{
     color: rgb(150, 150, 150);
 }
 
-input{
-    all: unset;
-    background-color: white;
-    text-align: left;
-    color: black;
-    padding: 4px 8px;
-    border-radius: 8px;
-    border-color: #00000000;
-}
-
-
 .content{
     position: relative;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 48px;
     padding: 16px;
     border: 24px;
     width: 80%;
