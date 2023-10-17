@@ -16,7 +16,7 @@ html{
 }
 
 header {
-    z-index: 10;
+    z-index: 2;
     background-color: #202020;
     color: white;
     padding: 0.5em;
@@ -27,7 +27,7 @@ header {
 }
 
 footer {
-    z-index: 10;
+    z-index: 2;
     background-color: #202020;
     color: white;
     font-size: smaller;
@@ -38,18 +38,11 @@ footer {
     bottom: 0;
 }
 
-.footerLink{
-    text-decoration: none;
-    color: white;
-}
-
 body {
-    z-index: 0;
-    height: auto;
+    z-index: 0;    
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    padding-bottom: 10%;
     text-align: center;
     background-color: #203040;
 }
@@ -61,25 +54,21 @@ div{
 .menu{
     z-index: 1;
     left: 0;
-    top: 10%;
     background-color: #252525;
     position: absolute;
-    height: max-content;
+    height: 100%;
     text-align: center;
     padding: 0;
-    width: auto;
-    transition: 0.5s;
+    min-width: 5%;
+    transition: min-width 0.5s;
 }
-
-.linkMenu{
-    text-decoration: none;
-    color: white;
-    padding: 12px;
+.menu:hover{
+    min-width: 20%;
 }
 
 a{
     text-decoration: none;
-    color: black;
+    color: white;
     transition: color 0.5s;
 }
 a:hover{
@@ -139,7 +128,6 @@ button{
 .fa-twitter{
     background-image: url("./icons/Twitter.jpg");    
     background-size: 48px;
-
 }
 
 .fa-spoutible{
@@ -149,5 +137,10 @@ button{
 
 .fa-youtube{
     background-image: url("./icons/Youtube.png");    
+    background-size: 48px;
+}
+
+.fa-github{
+    background-image: url("./icons/Github");
     background-size: 48px;
 }
