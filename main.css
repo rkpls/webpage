@@ -51,6 +51,8 @@ body {
 div{
     margin: auto;
     display: flex;
+    overflow: auto;
+    text-align: center;
 }
 
 .menu{
@@ -77,60 +79,70 @@ a:hover{
     color: rgb(150, 150, 150);
 }
 
-.content{
+.container{
     position: relative;
+    text-align: center;
     margin-top: 48px;
     padding: 16px;
-    border: 24px;
     width: 80%;
     background-color: #ccc;
     border-radius: 12px;
 }
 
+h2{
+    padding-left: 2em;
+}
+
+.content{
+    width: max-content;
+    overflow: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
 button{
-    border-radius: 30%;
     width: 48px;
     height: 48px;
-    background-color: #252525;
-    border: black;
-    border: 2px;
     margin: 12px;
+    background-color: #252525;
+    border-radius: 24%;
+    border-color: transparent;
     cursor: pointer;
+    box-shadow: 4px 4px 4px#20202050;
+    transition: 0.5s;
+    background-position: center;
+    background-size: 50px;
+}
+button:hover{
+    transform: translate3d(-0.2em);
 }
 
 
 
 .fa-linkedin{
     background-image: url("./icons/LinkedIn.png");
-    background-size: 48px;
 }
 
 .fa-threads{
     background-image: url("./icons/Threads.jpg");
-    background-size: 48px;
 }
 
 .fa-instagram{
     background-image: url("./icons/Instagram.jpg");   
-    background-size: 48px;
 }
 
 .fa-twitter{
     background-image: url("./icons/Twitter.jpg");    
-    background-size: 48px;
 }
 
 .fa-spoutible{
     background-image: url("./icons/Spoutible.jpg");    
-    background-size: 48px;
 }
 
 .fa-youtube{
     background-image: url("./icons/Youtube.png");    
-    background-size: 48px;
 }
 
 .fa-github{
     background-image: url("./icons/Github");
-    background-size: 48px;
 }
