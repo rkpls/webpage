@@ -83,3 +83,20 @@ h2{
     text-align: right;
     padding: 0px 12px 0px 12px;
 }
+
+img{
+    background-color: white;
+    border-radius: 30%;
+    box-shadow: 0 0 2px 1px #40404080;
+}
+
+.icon{
+    height: 48px;
+    width: 48px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.icon:hover{
+    box-shadow: 0 0 4px 2px #40404080;
+}
