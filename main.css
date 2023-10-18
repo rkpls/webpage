@@ -1,10 +1,10 @@
 
-
 html{
     cursor: default;
     scroll-behavior: smooth;
     box-sizing: border-box;
-    color: white;
+    margin: 0;
+    padding: 0;
 }
 
 ::-webkit-scrollbar {
@@ -13,209 +13,66 @@ html{
     background: transparent;
 }
 
-::placeholder{
+body{
+    background-color: #ccc;
     color: black;
-    opacity: 0.5;
-}
-
-:root {
-  --white: white;
-  --black: black;
-  --light: #d8dbe0;
-  --dark: #28292c;
-  --darkColored: #203040;
-  --lightColored: #6080a0;
+    min-height: 85%;
 }
 
 .dark-mode{
-    background-color: var(--dark);
-    color: var(--white);
-}
-.light-mode{
-    background-color: var(--light);
-    color: var(--black);
+    background-color: #444;
+    color: white;
 }
 
-header {
-    z-index: 2;
-    padding: 0.5em;
-    text-align: center;
-    position: relative;
+header{
+    background-color: #aaa;
     width: 100%;
+    height: 10%;
     top: 0;
-    display: flex;
-    background-color: var(--black);
+    display: inline-block;
 }
 
-.toggleSwitch{
-    width: 120px;
-    background-color: var(--light);
-}
-label {
-  position: absolute;
-  height: 48px;
-  background-color: var(--dark);
-  border-radius: 24px;
-}
-input{
-    position: absolute;
-    display: none;
-}
-.slider{
-    position: absolute;
+footer{
+    background-color: #aaa;
     width: 100%;
-    height: 100%;
-    border-radius: 25%;
-    transition: 0.2s;
-}
-input:checked ~ .slider {
-    background-color: var(--light);
-  }
-  
-  .slider::before {
-    content: "";
-    position: absolute;
-    top: 8px;
-    left: 4px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    box-shadow: inset 28px -4px 0px 0px var(--light);
-    background-color: var(--dark);
-    transition: 0.3s;
-  }
-  
-  input:checked ~ .slider::before {
-    transform: translateX(95px);
-    background-color: var(--dark);
-    box-shadow: none;
-  }
-
-
-footer {
-    z-index: 2;
-    background-color: var(--black);
-    color: var(--white);
-    font-size: smaller;
-    padding: 1em;
-    text-align: center;
-    position: fixed;
-    width: 100%;
+    height: 5%;
     bottom: 0;
-}
-
-body {
-    z-index: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    background-color: var(--darkColored);
+    position: absolute;
 }
 
 div{
-    margin: auto;
-    display: flex;
-    overflow: auto;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;    
-}
-
-.menu{
-    z-index: 1;
-    left: 0;
-    background-color: var(--dark);
-    position: absolute;
-    height: 100%;
-    text-align: center;
-    padding: 0;
-    min-width: 5%;
-    transition: 0.5s;
-}
-.menu:hover{
-    min-width: 20%;
-}
-
-a{
-    text-decoration: none;
-    color: white;
-    transition: color 0.5s;
-}
-a:hover{
-    color: rgb(150, 150, 150);
-}
-
-.container{
-    position: relative;
-    text-align: center;
-    margin-top: 48px;
-    padding: 16px;
-    width: 80%;
-    background-color: var(--light);
-    border-radius: 12px;
-}
-
-h1{
-    padding-left: 4em;
-    color: var(--white);
-}
-h2{
-    padding-left: 2em;
-    color: var(--black);
 }
 
 .content{
-    width: max-content;
-    overflow: auto;
-    display: inline-flex;
-    flex-wrap: wrap;
-    word-wrap: break-word;
+    border-radius: 24px;
+    background-color: white;
+    padding: 12px;
+    margin-top: 24px;
+    width: 80%;
 }
 
-button{
-    width: 48px;
-    height: 48px;
-    margin: 12px;
-    border-radius: 24%;
-    border-color: transparent;
-    cursor: pointer;
-    box-shadow: 4px 4px 4px#20202050;
-    transition: 0.5s;
-    background-position: center;
-    background-size: 50px;
-}
-button:hover{
-    transform: translateY(-0.2em);
+.box{
+    padding: 12px;
+    display: inline-block;
 }
 
-
-
-.fa-linkedin{
-    background-image: url("./icons/LinkedIn.png");
+p{
+    text-align: justify;
+    padding: 0px 12px 0px 12px;
 }
 
-.fa-threads{
-    background-image: url("./icons/Threads.jpg");
+h1{
+    padding: 0px 36px 0px 36px;
+    text-align: center;
 }
 
-.fa-instagram{
-    background-image: url("./icons/Instagram.jpg");   
+h2{
+    padding: 0px 24px 0px 24px;
+    text-align: left;
 }
 
-.fa-twitter{
-    background-image: url("./icons/Twitter.jpg");    
-}
-
-.fa-spoutible{
-    background-image: url("./icons/Spoutible.jpg");    
-}
-
-.fa-youtube{
-    background-image: url("./icons/Youtube.png");    
-}
-
-.fa-github{
-    background-image: url("./icons/Github");
+.darkModeButton{
+    text-align: right;
+    padding: 0px 12px 0px 12px;
 }
