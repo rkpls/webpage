@@ -19,7 +19,7 @@ body{
     color: white;
 }
 
-.LightModeButton{
+.LightMode{
     background-color: #ddd;
     color: black;
 }
@@ -54,7 +54,7 @@ div{
 
 .content{
     border-radius: 24px;
-    background-color: #666;
+    background-color: #203040;
     padding: 12px;
     margin-top: 24px;
     width: 80%;
