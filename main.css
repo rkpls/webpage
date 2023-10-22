@@ -50,7 +50,7 @@ div{
 }
 
 .main{
-    margin-top: 12%;
+    margin: 12% 0 12% 0;
 }
 
 .content{
@@ -62,14 +62,22 @@ div{
 }
 
 .box{
+    text-align: left;
     padding: 12px;
     display: inline-block;
 }
 
 p{
+    text-align: left;
     text-align: justify;
-    padding: 0px 12px 0px 12px;
+    padding: 0 2em 0 2em;
 }
+
+dl,dt,dd{
+    text-align: left;
+    padding: 6px 12px 6px 12px;
+}
+
 
 a{
     text-decoration: none;
@@ -88,21 +96,30 @@ h2{
     padding: 0px 24px 0px 24px;
 }
 
+h3,h4{
+    text-align: left;
+    padding: 0px 24px 0px 24px;
+}
+
 .darkModeButton{
     text-align: right;
-    padding: 0px 12px 0px 12px;
+    padding: 0 12px 0 12px;
 }
 
 img{
-    border-radius: 30%;
-    box-shadow: 0 0 8px 4px #20202080;
+    float: right;
+    padding: 0 0 1em 2em;
+    width: 40%;
 }
 
 .icon{
     height: 48px;
     width: 48px;
+    border-radius: 30%;
+    box-shadow: 0 0 8px 4px #20202080;
     object-fit: fill;
     overflow: hidden;
+    padding: 0;
     transition: 0.5s;
 }
 

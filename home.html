@@ -17,10 +17,30 @@
     <h1>Riko Pals</h1>
     <button class="LightModeButton" onclick="toggleLightMode()" style="display: none;">Toggle Light Mode</button>
 </header>
+
+
 <div class="main">
 
 <div class="content">
-    <h2>Socials</h2>
+    <h2>Links</h2>
+    <p>
+        <dl>
+            <dt><a href="#socials">Soziale Medien</a></dt>
+            <dt><a href="#electronics">Elektronik</a></dt>
+            <dd><a href="#transistors">Transistoren</a></dd>
+            <dd><a href="#mosfet">Mosfet</a></dd>
+            <dd><a href="#bjt">BJT</a></dd>
+            <dd><a href="#igbt">IGBT</a></dd>
+<!--            <dt><a href="#sonsors">Sensoren</a></dt>
+            <dd><a href="#light">Licht</a></dd>
+            <dd><a href="#gyro">Gyro</a></dd>
+            <dd><a href="#radar">Radar und Entfernungssensoren</a></dd>       -->     
+        </dl>
+    </p>    
+</div>
+
+<div class="content" id="socials">
+    <h2>Soziale Medien</h2>
     <div class="box">
         <a href="https://www.threads.net/rk.pls" id="threads"><img class="icon" src="./icons/Threads.jpg"></a>
     </div>
@@ -46,8 +66,50 @@
         <a href="https://g.dev/rikopals" id="googledevs"><img class="icon" src="./icons/GoogleDevs.jpg"></a>
     </div>        
     </div>        
-</div>
 
+<div class="content" id="electronics">
+    <h2>Elektronik</h2>
+    <p id="transistors">
+        <h3>Transistoren</h3>
+        <h4>Basics:</h4>
+            <p>
+                <img src="./images/pnp-npn-transistor.jpg">
+                <p>Emitter (Drain): Anschluss richtung (-)</p>
+                <p>Basis (Gate): Ansteuerung.</p>
+                <p>Kollektor (Source): Anschluss richtung (+)</p>
+                <p>
+                Im Datenblatt stehen informationen Höchstspannung (V<sub>GS</sub>) und Schwellspannung.
+                <br>Bei PNP Transistoren bestimmt die Steuerspannung wie viel der Gesamtspannung durchgelassen wird. Bei NPN Transistoren wird die Stromstärke bestimmt.
+                <br>Zwischen Basis und Emitter ist eine Kapazität. diese wird beim einschalten geladen und hält den Transistor aktiv. Zum Abschalten muss die Kapazität abgeleitet werden.
+                <br>Die Ausschaltzeit (Fall Time: t<sub>f</sub>) ist länger wie die Einschaltzeit (Fall Time: t<sub>r</sub>). Das bedeutet bei Brückenschaltungen entsteht für kurze zeit ein Kurzschluss wenn sich die Zeiten überschneiden.
+                </p>
+            </p>
+        
+            <h4 id="mosfet">MOSFET</h4>
+            <p>
+                <p>
+                    Bei Mosfets ist der Emitter leitend mit dem Kühlkörper verbunden. Sollen mehrere Mosfets über einen Kühlkörper gekühlt werden, müssen diese voneinander Isoliert werden. Dies gilt auch für die Montageschraube.
+                </p>
+            </p>
+            <h4 id="bjt">BJT</h4>        
+
+            <h4 id="igbt">IGBT</h4>
+            <p>
+                <p>
+                    Insulatet Gate Bipolar Transistor
+                </p>
+            </p>
+
+        </p>
+    </p>
+<!--    <p id="sensors">
+        <h2>Sensoren</h2>
+        <p id="light">Licht</p>
+        <p id="gyro">Gyro</p>
+        <p id="radar">Radar</p>-->
+    </p>
+</div>
+</div>
 </div>
 <footer>
     &copy; rikopals.com | rikopals.de
