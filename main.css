@@ -28,9 +28,9 @@ header{
     background-color: #222;
     min-width: 100%;
     min-height: 10%;
+    position: absolute;
     top: 0;
     left: 0;
-    position: fixed;
 }
 
 footer{
