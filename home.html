@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Riko Pals</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="script" href="script.js">
+    <!--<link rel="script" href="script.js">-->
     <link rel="icon" href="./icons/RP.PNG">
 </head>
 
@@ -15,14 +15,14 @@
 
 <header>
     <h1>Riko Pals</h1>
-    <button class="LightModeButton" onclick="toggleLightMode()" style="display: none;">Toggle Light Mode</button>
+    <!--<button class="LightModeButton" onclick="toggleLightMode()">Toggle Light Mode</button>-->
 </header>
 
 
 <div class="main">
 
 <div class="content">
-    <h2>Links</h2>
+    <h2 id="top">Links</h2>
     <p>
         <dl>
             <dt><a href="#socials">Soziale Medien</a></dt>
@@ -31,7 +31,7 @@
             <dd><a href="#mosfet">Mosfet</a></dd>
             <dd><a href="#bjt">BJT</a></dd>
             <dd><a href="#igbt">IGBT</a></dd>
-<!--            <dt><a href="#sonsors">Sensoren</a></dt>
+<!--        <dt><a href="#sonsors">Sensoren</a></dt>
             <dd><a href="#light">Licht</a></dd>
             <dd><a href="#gyro">Gyro</a></dd>
             <dd><a href="#radar">Radar und Entfernungssensoren</a></dd>       -->     
@@ -40,7 +40,7 @@
 </div>
 
 <div class="content" id="socials">
-    <h2>Soziale Medien</h2>
+    <a href="#top"><h2>Soziale Medien</h2></a>
     <div class="box">
         <a href="https://www.threads.net/rk.pls" id="threads"><img class="icon" src="./icons/Threads.jpg"></a>
     </div>
@@ -68,19 +68,19 @@
     </div>        
 
 <div class="content" id="electronics">
-    <h2>Elektronik</h2>
+    <a href="#top"><h2>Elektronik</h2></a>
     <p id="transistors">
         <h3>Transistoren</h3>
         <h4>Basics:</h4>
             <p>
                 <img src="./images/pnp-npn-transistor.jpg">
-                <p>Emitter (Drain): Anschluss richtung (-)</p>
+                <p>Emitter (Drain): Anschluss Richtung (-)</p>
                 <p>Basis (Gate): Ansteuerung.</p>
-                <p>Kollektor (Source): Anschluss richtung (+)</p>
+                <p>Kollektor (Source): Anschluss Richtung (+)</p>
                 <p>
                 Im Datenblatt stehen informationen Höchstspannung (V<sub>GS</sub>) und Schwellspannung.
-                <br>Zwischen Basis und Emitter ist eine Kapazität. diese wird beim einschalten geladen und hält den Transistor aktiv. Zum Abschalten muss die Kapazität abgeleitet werden.
-                <br>Die Ausschaltzeit (Fall Time: t<sub>f</sub>) ist länger wie die Einschaltzeit (Fall Time: t<sub>r</sub>). Das bedeutet bei Brückenschaltungen entsteht für kurze zeit ein Kurzschluss wenn sich die Zeiten überschneiden.
+                <br>Zwischen Basis und Emitter ist eine Kapazität. Diese wird beim Einschalten geladen und hält den Transistor aktiv. Zum Abschalten muss die Kapazität abgeleitet werden.
+                <br>Die Ausschaltzeit (Fall Time: t<sub>f</sub>) ist länger wie die Einschaltzeit (Fall Time: t<sub>r</sub>). Das bedeutet bei Brückenschaltungen entsteht für kurze Zeit ein Kurzschluss wenn sich die Zeiten überschneiden.
                 </p>
             </p>
         
@@ -102,7 +102,7 @@
         </p>
     </p>
 <!--    <p id="sensors">
-        <h2>Sensoren</h2>
+        <a href="#top"><h2>Sensoren</h2></a>
         <p id="light">Licht</p>
         <p id="gyro">Gyro</p>
         <p id="radar">Radar</p>-->
