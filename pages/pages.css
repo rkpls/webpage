@@ -1,0 +1,30 @@
+
+html{
+    cursor: default;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+footer{
+    color: white;
+    background-color: #222;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    font-size: small;
+}
