@@ -11,10 +11,10 @@
 </head>
 
 <body>
-
-    <h1>Adler Interface</h1>
-    <p>
-        Input
+    <div class="main">
+        <h1>Adler Interface</h1>
+        <div class="content">
+        <h2>Input</h2>
         <form action="/submit" method="post">
             <label for="power_input">Power:</label>
             <input type="range" id="power_input" name="power_input" min="-100" max="100" oninput="updateValue(this.value)" style="width: 400px;" required>
@@ -23,10 +23,15 @@
         </form>
     </p>
     <p>
-        Output
+        <h2>Output</h2>
         <div id="log">Terminal:</div>
     </p>
 
+
+    <p>
+        Datasheets:
+        <a href="Vishay-TCST1103-datasheet.pdf">Phototransistor</a>
+    </p>
     <script>
         document.getElementById("power_input").value = 0;
 
