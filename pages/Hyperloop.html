@@ -25,13 +25,14 @@
         <p>
             <h2>Output</h2>
             <div id="log">Terminal:</div>
-            <div id="chart_1">Chart</div>
+            <div id="chart_div"></div>
+            <div id="chart_div"></div>
         </p>
         </div>
         <div class="content">
         <p>
-            Datasheets:
-            <a href="Vishay-TCST1103-datasheet.pdf">Phototransistor</a>
+            Datasheets: <br>
+            <a href="Vishay-TCST1103-datasheet.pdf">Phototransistor</a><br>
             <a href="HCSR04.pdf">Radar</a>
         </p>
         </div>
@@ -63,22 +64,22 @@
         function drawChart() {
             // create data object with default value
             let data = google.visualization.arrayToDataTable([
-              ['Time', 'CPU Usage', 'RAM'],
+              ['Time', 'Volts', 'Amps'],
               [0, 0, 0],
             ]);
             // create options object with titles, colors, etc.
             let options = {
-              title: "CPU Usage",
+              title: "V/A",
               hAxis: {
                 textPosition: 'none',
               },
               vAxis: {
-                title: "Usage"
+                title: "t"
               }
             };
             // draw chart on load
             let chart = new google.visualization.LineChart(
-              document.getElementById("chart_1")
+              document.getElementById("chart_div")
             );
             chart.draw(data, options);
           }
