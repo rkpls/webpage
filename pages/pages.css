@@ -93,3 +93,11 @@ h3,h4{
     text-align: left;
     padding: 0px 24px 0px 24px;
 }
+
+
+#chart_div {
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projekt Hyperloop</title>
     <link rel="stylesheet" href="pages.css">
+    <link rel="script" href="script.js">
     <link rel="icon" href="./icons/RP.PNG">
 </head>
 
@@ -37,60 +38,6 @@
         </p>
         </div>
     </div>
-    <script>
-        // load current chart package
-        google.charts.load("current", {
-        packages: ["corechart", "line"]
-        });
-        // set callback function when api loaded
-        google.charts.setOnLoadCallback(drawChart);
-
-        document.getElementById("power_input").value = 0;
-
-        function updateValue(value) {
-            document.getElementById("valueDisplay").textContent = value;
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/submit", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.send(value);
-        }
-
-        // Update Terminal
-        function updateLog(message) {
-            var logElement = document.getElementById("log");
-            logElement.textContent += message + '\n';
-        }
-
-        function drawChart() {
-            // create data object with default value
-            let data = google.visualization.arrayToDataTable([
-              ['Time', 'Volts', 'Amps'],
-              [0, 0, 0],
-            ]);
-            // create options object with titles, colors, etc.
-            let options = {
-              title: "V/A",
-              hAxis: {
-                textPosition: 'none',
-              },
-              vAxis: {
-                title: "t"
-              }
-            };
-            // draw chart on load
-            let chart = new google.visualization.LineChart(
-              document.getElementById("chart_div")
-            );
-            chart.draw(data, options);
-          }
-
-        // WebSocket Connection
-        var socket = new WebSocket("ws://" + window.location.hostname + "/log");
-        socket.onmessage = function(event) {
-            var logMessage = event.data;
-            updateLog(logMessage);
-        }
-    </script>
 <footer>
     &copy; rikopals.com | rikopals.de
     <br>
