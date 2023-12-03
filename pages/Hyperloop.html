@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projekt Hyperloop</title>
     <link rel="stylesheet" href="pages.css">
-    <link rel="script" href="script.js">
+    <script src="script.js"></script>
     <link rel="icon" href="./icons/RP.PNG">
 </head>
 
-<body>
+<body onload="init()">
     <div class="main">
         <h1>Adler Interface</h1>
         <div class="content">
@@ -25,9 +25,7 @@
         </p>
         <p>
             <h2>Output</h2>
-            <div id="log">Terminal:</div>
-            <div id="chart_div"></div>
-            <div id="chart_div"></div>
+            <div id="terminal"></div>
         </p>
         </div>
         <div class="content">
