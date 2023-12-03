@@ -23,7 +23,7 @@ $(document).ready(function() { function connectToMicroPython()
 
 function getTerminalLog() {
   $.ajax({
-    url: 'http://80.187.124.97:81/terminal_log',
+    url: 'http://80.187.124.97:81/hyperloop',
     dataType: 'json',
     success: function(log) {
       if (log.length > 0) {
