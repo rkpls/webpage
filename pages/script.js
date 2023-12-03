@@ -7,7 +7,6 @@ $(document).ready(function() { function connectToMicroPython()
     console.log('Connected to MicroPython device');
     getTerminalLog();
   };
-
   socket.onmessage = function(event) {
     var log = JSON.parse(event.data);
     if (log.length > 0) {
@@ -16,14 +15,8 @@ $(document).ready(function() { function connectToMicroPython()
       }
     }
   };
-
   socket.onclose = function(event) {
     console.log('Disconnected from MicroPython device');
-    setTimeout(connectToMicroPython, 5000);
-  };
-
-  socket.onerror = function(event) {
-    console.log('Error connecting to MicroPython device');
     setTimeout(connectToMicroPython, 5000);
   };
 }
