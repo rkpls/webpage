@@ -40,6 +40,7 @@ div{
     text-align: center;
     margin: auto;
     overflow-y: scroll;
+    color: white;
 }
 
 .main{
@@ -94,10 +95,3 @@ h3,h4{
     padding: 0px 24px 0px 24px;
 }
 
-
-#chart_div {
-    width: 1200px;
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
