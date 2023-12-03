@@ -42,3 +42,6 @@ function getTerminalLog() {
 
 connectToMicroPython();
 });
+
+
+
