@@ -13,27 +13,26 @@
 
 <body onload="init()">
     <div class="main">
-        <h1>Adler Interface</h1>
+        <h1>Projekt Hyperloop - Adler</h1>
         <div class="content">
-        <h2>Input</h2>
-        <form action="/submit" method="post">
-            <label for="power_input">Power:</label>
-            <input type="range" id="power_input" name="power_input" min="-100" max="100" oninput="updateValue(this.value)" style="width: 400px;" required>
-            <br>
-            <span id="valueDisplay">0</span>
-        </form>
-        </p>
         <p>
-            <h2>Output</h2>
-            <div id="terminal"></div>
+            Teile: <br>
+            <table>
+                <tr><th>Teil</th><th>Datasheet</th><th>Library</th></tr>
+                <tr><td>ESP-S3-WROMM-1</td><td><a href="https://mischianti.org/wp-content/uploads/2023/08/vcc-gnd-studio-yd-esp32-s3-devkitc-1-clone-pinout-mischianti-low-resolution-1.jpg">X</a></td><td>-</td></tr>
+                <tr><td>Entfernungsmesser</td><td><a href="https://www.mpja.com/download/hc-sr04_ultrasonic_module_user_guidejohn.pdf">X</a></td><td><a href="https://github.com/rsc1975/micropython-hcsr04">X</a></td></tr>
+                <tr><td>Drehzahl Messer</td><td>-</a></td><td>Analog Hi Low</td></tr>
+                <tr><td>G-Kräfte Sensor</td><td><a href="https://www.haoyuelectronics.com/Attachment/GY-521/mpu6050.pdf">X</a></td><td><a href="https://github.com/larsks/py-mpu6050">X</a><a href="https://github.com/jpvlsmv/micropython-gy521">X</a></td></tr>
+                <tr><td>Strommesser</td><td>-</a></td><td>Analog 100mV/1A</td></tr>
+                <tr><td>Display</td><td><a href="https://cdn.velleman.eu/downloads/29/infosheets/sh1106_datasheet.pdf">X</a></td><td><a href="https://github.com/robert-hh/SH1106">X</a><a href="https://www.coderdojotc.org/micropython/displays/graph/11-oled-sh1106-i2c/">X</a></td></tr>
+            </table>
         </p>
         </div>
         <div class="content">
-        <p>
-            Datasheets: <br>
-            <a href="Vishay-TCST1103-datasheet.pdf">Phototransistor</a><br>
-            <a href="HCSR04.pdf">Radar</a>
-        </p>
+            <p>
+                Programm: <br>
+
+            </p>
         </div>
     </div>
 <footer>
