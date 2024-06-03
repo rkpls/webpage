@@ -195,10 +195,10 @@ h3,h4{
     box-shadow: 0 0 8px 4px #20202080;
     object-fit: fill;
     overflow: hidden;
-    padding: 0;
+    padding: 4;
     transition: 0.5s;
 }
 
 .icon:hover{
-    box-shadow: 0 0 12px 4px #202020;
+    box-shadow: 0 0 12px 4px #000000;
 }
