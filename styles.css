@@ -48,6 +48,10 @@ header, footer {
     max-height: 96px;
 }
 
+header{
+    padding-top: 20%;
+}
+
 footer {
     font-size: 1rem;
 }
