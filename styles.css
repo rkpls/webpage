@@ -43,9 +43,8 @@ header, footer {
     background-color: #222;
     color: white;
     text-align: center;
-    padding: 1em 0;
+    padding: 0.2em 0;
     animation: fadeIn 0.2s ease-in-out;
-    max-height: 64px;
 }
 
 footer {
