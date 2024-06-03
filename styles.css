@@ -115,3 +115,66 @@ nav ul li a:hover {
         font-size: 1.25rem;
     }
 }
+
+
+div{
+    text-align: center;
+    margin: auto;
+    overflow-y: scroll;
+}
+
+.content {
+    border-radius: 24px;
+    background-color: #444;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #555;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.box{
+    text-align: left;
+    padding: 12px;
+    display: inline-block;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    transition: 0.2s;
+}
+a:hover{
+    color: grey;
+}
+
+h1{
+    padding: 4px 36px 4px 36px;
+}
+
+h2{
+    padding: 0px 24px 0px 24px;
+}
+
+h3,h4{
+    text-align: left;
+    padding: 0px 24px 0px 24px;
+}
+
+.icon{
+    height: 48px;
+    width: 48px;
+    border-radius: 30%;
+    box-shadow: 0 0 8px 4px #20202080;
+    object-fit: fill;
+    overflow: hidden;
+    padding: 0;
+    transition: 0.5s;
+}
+
+.icon:hover{
+    box-shadow: 0 0 12px 4px #202020;
+}
