@@ -1,4 +1,9 @@
 
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
 html{
     cursor: default;
     scroll-behavior: smooth;
@@ -15,13 +20,21 @@ html{
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color:#203040;
-    color: white;
+    background: linear-gradient(-20deg, #000033, #000044, #000055,#000066, #000055, #000044,);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
 }
 
-.LightMode{
-    background-color: #ddd;
-    color: black;
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 header{
