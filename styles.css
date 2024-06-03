@@ -128,7 +128,6 @@ nav ul li a:hover {
 div{
     text-align: center;
     margin: auto;
-    overflow-y: scroll;
 }
 
 .content {
