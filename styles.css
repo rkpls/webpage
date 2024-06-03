@@ -45,7 +45,7 @@ header, footer {
     text-align: center;
     padding: 1em 0;
     animation: fadeIn 0.2s ease-in-out;
-    max-height: 16%;
+    max-height: 96px;
 }
 
 footer {
