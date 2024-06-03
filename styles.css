@@ -104,7 +104,6 @@ nav ul li a:hover {
     }
 }
 
-/* Scaling for 2K screens */
 @media (min-width: 2560px) {
     html, body {
         font-size: 18px;
@@ -114,7 +113,6 @@ nav ul li a:hover {
     }
 }
 
-/* Scaling for 4K screens */
 @media (min-width: 3840px) {
     html, body {
         font-size: 20px;
