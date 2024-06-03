@@ -81,13 +81,11 @@ aside.sidebar {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    color:rgba(51, 51, 51, 0.8)
 }
 
 aside.sidebar:hover {
     width: 15%;
     background-color: rgba(51, 51, 51, 1);
-    color: white;
 }
 
 .menu-icon {
