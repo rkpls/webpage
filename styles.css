@@ -14,6 +14,33 @@ html, body {
     box-sizing: border-box;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 2560px) {
+    html, body {
+        font-size: 18px;
+    }
+    footer {
+        font-size: 1.125rem;
+    }
+}
+
+@media (min-width: 3840px) {
+    html, body {
+        font-size: 20px;
+    }
+    footer {
+        font-size: 1.25rem;
+    }
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -25,7 +52,7 @@ header, footer {
     color: white;
     text-align: center;
     padding: 1em 0;
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.2s ease-in-out;
 }
 
 footer {
@@ -98,32 +125,7 @@ nav ul li a:hover {
     opacity: 1;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
-@media (min-width: 2560px) {
-    html, body {
-        font-size: 18px;
-    }
-    footer {
-        font-size: 1.125rem;
-    }
-}
-
-@media (min-width: 3840px) {
-    html, body {
-        font-size: 20px;
-    }
-    footer {
-        font-size: 1.25rem;
-    }
-}
 
 
 div{
