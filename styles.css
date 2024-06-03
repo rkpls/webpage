@@ -11,6 +11,7 @@ html, body {
 
 body {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
 }
 
@@ -35,8 +36,10 @@ footer .footer-content {
 
 main {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1em;
-    text-align: center;
 }
 
 aside.sidebar {
