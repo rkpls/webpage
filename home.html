@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Riko Pals</title>
     <link rel="stylesheet" href="main.css">
+    <!--<link rel="script" href="script.js">-->
     <link rel="icon" href="./icons/RP.PNG">
 </head>
 
@@ -14,6 +15,40 @@
 
 
 <div class="main">
+
+<div class="content">
+    <h2 id="top">Links</h2>
+    <p>
+        <dl>
+            <dt><a href="#socials">Soziale Medien</a></dt>
+            <dt><a href="./pages/Hyperloop.html">Hyperloop Projekt</a></dt>
+            <dt><a href="#iot">IoT Projekte</a></dt>
+
+            <dt><a href="#electronics">Elektronik</a></dt>
+            <dd><a href="#transistors">Transistoren</a></dd>
+            <dd><a href="#mosfet">Mosfet</a></dd>
+            <dd><a href="#bjt">BJT</a></dd>
+            <dd><a href="#igbt">IGBT</a></dd>       
+<!--        <dt><a href="#sensors">Sensoren</a></dt>
+            <dd><a href="#light">Licht</a></dd>
+            <dd><a href="#gyro">Gyro</a></dd>
+            <dd><a href="#radar">Radar und Entfernungssensoren</a></dd>       -->
+
+            <dt><a href="#cad_fusion">CAD (Fusion 360)</a></dt>
+            <dd><a href="#gears">Zahnräder</a></dd>
+
+            <dt><a href="#network">Netzwerk</a></dt>
+            <dd><a href="#vpn_tunnel">VPN Tunnel und Remote Access</a></dd>
+            <dd><a href="#mqtt">MQTT</a></dd>
+            <dd><a href="#nodejs">Node Red</a></dd>
+            <dd><a href="#raspi">Raspberry Pi</a></dd>
+            <dd><a href="https://www.pi-hole.net">Pi-hole DNS blocker</a></dd>
+
+            <dt><a href="#notes">Zwischenablage</a></dt>
+
+        </dl>
+    </p>    
+</div>
 
 <div class="content" id="socials">
     <a href="#top"><h2>Soziale Medien</h2></a>
@@ -41,7 +76,117 @@
     <div class="box">
         <a href="https://g.dev/rikopals" id="googledevs"><img class="icon" src="./icons/GoogleDevs.jpg"></a>
     </div>        
-</div>        
+    </div>        
+
+<div class="content" id="electronics">
+    <a href="#iot"><h2>IoT Projekte</h2></a>
+    <p>
+        <a href="https://how2electronics.com/iot-smart-electricity-energy-meter-with-esp32-blynk-2-0/">AC Verbrauchsmessung für Zuhause</a>
+    </p>
+</div>
+
+<div class="content" id="electronics">
+    <a href="#top"><h2>Elektronik</h2></a>
+    <p id="transistors">
+        <h3>Transistoren</h3>
+        <h4>Basics:</h4>
+            <p>
+                <img src="./images/pnp-npn-transistor.jpg">
+                <p>
+                    PNP- und NPN-Transistoren gehören zur Familie der bipolaren Transistoren. PNP steht für "positiv-negativ-positiv", während NPN für "negativ-positiv-negativ" steht. Diese Transistoren bestehen aus drei Schichten von Halbleitermaterialien und können als Verstärker oder Schalter dienen. Bei einem PNP-Transistor fließt der elektrische Strom von der Basis zu dem Emitter, während bei einem NPN-Transistor der Strom von dem Emitter zur Basis fließt (techn. Stromrichtung).
+                </p>
+                <p>
+                    Emitter (Drain): Anschluss Richtung (-) <br>
+                    Basis (Gate): Ansteuerung. <br>
+                    Kollektor (Source): Anschluss Richtung (+) <br>
+                    Im zugehörigem Datenblatt stehen Informationen Höchstspannung (V<sub>GS</sub>) und Schwellspannung. <br>
+                    Zwischen Basis und Emitter ist eine Kapazität. Diese wird beim Einschalten geladen und hält den Transistor aktiv. Zum Abschalten muss die Kapazität abgeleitet werden. <br>
+                	Die Ausschaltzeit (Fall Time: t<sub>f</sub>) ist länger wie die Einschaltzeit (Fall Time: t<sub>r</sub>). Das bedeutet bei Brückenschaltungen entsteht für kurze Zeit ein Kurzschluss wenn sich die Zeiten überschneiden.
+                </p>
+            </p>
+        
+            <h4 id="mosfet">MOSFET</h4>
+            <p>
+                Der MOSFET (Metal-Oxide-Semiconductor Field-Effect Transistor) ist ein  Transistor, der auf dem Prinzip der Feldwirkung basiert. Er bestehen aus einem Metal-Gate, einem Isolator und einem Halbleiter. Er kombiniert bis zu einem gewissen Grad geringe Verlustleistung und schnelle Schaltgeschwindigkeit.<br>
+                Bei Mosfets ist der Emitter leitend mit dem Kühlkörper verbunden. Sollen mehrere Mosfets über einen Kühlkörper gekühlt werden, müssen diese voneinander Isoliert werden. Dies gilt auch für die Montageschraube.
+            </p>
+            <h4 id="bjt">BJT</h4>        
+            <p>
+                Der BJT (NPN-Junction-Transistor) ist eine spezielle Form des NPN-Transistors. Diese Transistoren bestehen aus drei Halbleiterschichten, wobei der Stromfluss von der Emitter-Region zur Basis-Region und schließlich zur Collector-Region erfolgt. NJTs werden in Hochfrequenzanwendungen eingesetzt.
+            </p>
+            <h4 id="igbt">IGBT</h4>
+            <p>
+                Der IGBT (Insulated Gate Bipolar Transistor) kombiniert die Vorteile von MOSFETs und bipolaren Transistoren. Sie haben eine Gate-Isolatorschicht wie MOSFETs, aber einen bipolarartigen Stromfluss. Verwendet in Hochleistungsanwendungen wie Motorsteuerungen bis über 500kw.
+            </p>
+
+        </p>
+    </p>
+<!--    <p id="sensors">
+        <a href="#top"><h2>Sensoren</h2></a>
+        <p id="light">Licht</p>
+        <p id="gyro">Gyro</p>
+        <p id="radar">Radar</p>-->
+    </p>
+</div>
+<div class="content" id="cad_fusion">
+    <a href="#top"><h2>CAD (Fusion 360)</h2></a>
+    <p id="gears">
+        <h3>Zahnräder</h3>
+        <p>
+            Um Zahnräder in Fusion 360 zu generieren wird das Spur-Gear-Script verwendet, zu finden unter Dienstprogramme, Scripte.<br>
+            Zum Generieren eines Zahnrades passend zu einem vorhandenem Zahnrad werden drei Angaben benötigt: Die Zahnanzahl, den Druckwinkel, und das Modul <br>
+            Der Druckwinkel (Pressure Angle) beschreibt den Winkel zwischen Zahnfläche und Zahntangente, also wie spitz der Zahn zuläuft. Dieser liegt üblicherweise bei 20°, Spur-Gear schlägt auch 14,5° und 25° vor. Das Modul ist der auf die Zahl der Zähne bezogene Teilkreis-Durchmesser eines Zahnrades und bestimmt somit die Größe des Zahnes. Es wird berechnet aus Durchmesser durch Zahnanzahl.<br>
+            <i>m=d/z</i><br>
+            Zum Generieren eines passenden Zahnrades mit anderer Zahnanzahl oder anderem Durchmesser wird das Modul zur Berechnung der jeweils fehlenden Größe verwendet. Für das Modul gibt es standartisierte Größen in der DIN 780 Reihe I. Ist die Berechnug ungenau, sollte der nächstpassende Wert aus dieser Reihe verwendet werden. <br>
+            Das Spur-Gear-Script berechnet automatisch den größtmöglichen Radius bis zum Zahnholraum (Root Fillet Radius). Dieser ist zu verwenden. <br>
+            Zahnraddicke und Lochdurchmesser könn frei gewählt werden, wobei der Lochradius nicht größer wie der Radius bis zum Zahnholraum sein darf. <br>
+        </p>
+    </p>
+</div>
+<div class="content" id="network">
+    <a href="#top"><h2>Netzwerk</h2></a>
+    <p id="vpn_tunnel">
+        <h3>VPN Tunnel und Remote Access</h3>
+        <p>
+            In den meisten Routern (Speedport) lässt sich ein Virtuelles Netzwerk einrichten. Es wird ein Schlüsses generiert mit dem sich über z. B. WireGuard verbunden werden kann. Das Endgerät agiert nun auch von anderen Netzwerken aus als wäre es im Heimnetzwerk. Andere Geräte wie Router, Heimserver, oder Microcontroller lassen sich nun direkt über ihr IP aufrufen. <br>
+            Die permanente Nutzung dieser art VPN benötigt allerding eine statische IP-Adressen vom Provider. In den meisten Privatverträgen ist dies nicht vorgesehen. Es is eine regelmäßige Erneuerung des VPN erforderlich.
+        </p>
+    </p>
+    <p id="mqtt">
+        <h3>MQTT</h3>
+        <p>
+            MQTT (Message Queuing Telemetry Transport) ist ein Protokoll, dass für die Übertragung von Nachrichten zwischen Geräten in IoT (Internet of Things)-Umgebungen entwickelt wurde. <br>
+            Verwendet wird das Publish/Subscribe-Modell, bei dem Geräte als Publisher Nachrichten veröffentlichen können, die dann von anderen Geräten als Subscriber abonniert werden können. Alle Nachrichten laufen über einen Broker, dem MQQT service er befindet sich auf einem Gerät im Netzwerk. <br>
+            Es werden drei verschiedene QoS-Level (Quality of Service) unterstützt, die die Zuverlässigkeit der Nachrichtenübertragung steuern. Stufe 0 reicht für die Nutzung in einem Heimnetzwerk völlig aus. <br>
+            Typischerweise werden JSON, XML, binäre Daten oder Text versendet. JSON bietet sich an, da es von allen Programmiersprachen leicht verarbeitet werden kann.<br>
+        </p>
+    </p>
+    <p id="nodered">
+        <h3>Node-RED</h3>
+        <p>
+            Node-RED basiert auf JavaScript und ist eine überwiegend intuitive grafische Oberfläche, mit der sich Daten aus dem Netzwerk im Netzwerk visualisieren lassen.<br>
+        </p>
+    </p>
+    <p id="raspi">
+        <h3>Raspberry Pi</h3>
+        <p>
+            Zum Betrieb eines Raspberry Pi (5) wird ein 5V 2A USB-C Netzteil benötigt. Für das OS wird eine Class 10 micro SD Karte verwendet. Mit dem passendem micro sd Kartenleser wird mit einem Windows PC das Raspberry OS mit der offiziellen Software auf die SD Karte geflashed. Dies reicht theoretisch zum Aufsetzten des Raspis. Einfacher wird es mit Netzwerkleitung, USB-A Maus und Tastatur sowie mit einem via Micro HDMI anschließbarem Monitor. Die Auflösung sollte auf 1080p reduziert werden. <br>
+            Dem Raspberry sollte im Netzwerk eine feste IP-Adresse vergeben werden. Zur remote Verbinung mit dem Raspi wird die Freeware Putty oder Windows Remotedesktop verwendet. Dadurch ist es nicht erforderlich den Raspi mit Peripherie zu verbinden.<br>
+            Auf dem Raspi kann nun MQTT und node Red installiert und dem Autostart hinzugefügt werden. Auf die Programmieroberfläche von Node-Red lässt sich mit dem Port :1880 zugreifen.
+        </p>
+    </p>
+</div>
+<div class="content" id="#cad_fusion">
+    <a href="#top"><h2>Zwischenablage</h2></a>
+    <p id="notes">
+        <h3>Dokumente</h3>
+        <p>
+            <a href="./files/Arbeitszeugnis-Checkliste.pdf">Arbeitszeugnis Checkliste</a><br>
+            <a href="./files/qualifiziertes_Zeugnis_Beispiel.pdf">Arbeitszeugnis Beispiel</a><br>
+            <a href="https://www.arbeitszeugnisse.de/arbeitszeugnis-formulierungen/geheimcode">Arbeitszeugnisse.de</a>
+        </p>
+    </p>
+</div>
 </div>
 <footer>
     &copy; rikopals.com | rikopals.de
