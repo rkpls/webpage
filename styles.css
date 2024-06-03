@@ -118,6 +118,7 @@ div{
     text-align: center;
     margin: auto;
     height: auto;
+    min-height: fit-content;
     color: white;
 }
 
