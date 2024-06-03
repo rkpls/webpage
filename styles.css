@@ -86,6 +86,7 @@ nav ul li a {
     display: block;
     padding: 10px;
     color: white;
+    opacity: 0;
     text-decoration: none;
     text-align: center;
     width: 100%;
@@ -93,6 +94,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #575757;
+    opacity: 1;
 }
 
 @keyframes fadeIn {
