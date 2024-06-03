@@ -130,6 +130,7 @@ nav ul li {
 nav ul li a {
     display: block;
     color: white;
+    padding: 8px;
     text-decoration: none;
     text-align: center;
     width: 100%;
