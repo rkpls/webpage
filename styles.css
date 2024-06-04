@@ -48,11 +48,13 @@ header, footer {
 header{
     z-index: 1;
     padding: 0.2em 0;
+    border-bottom: 2px solid rgba(0, 160, 180, 1);
 }
 footer {
     z-index: 3;
     font-size: 1rem;
     padding: 0.1em 0;
+    border-top: 2px solid rgba(0, 160, 180, 1);
 }
 
 footer .footer-content {
@@ -75,7 +77,7 @@ aside.sidebar {
     z-index: 2;
     width: 5%;
     background-color: rgba(51, 51, 51, 0.8);
-    border-right: 2px solid rgba(0, 160, 180, 0.8);
+    border-right: 2px solid rgba(0, 160, 180, 1);
     position: fixed;
     height: 100%;
     transition: width 0.2s, background-color 0.2s;
@@ -95,6 +97,7 @@ aside.sidebar:hover {
 }
 
 .menu-icon {
+    padding: 16px 0 16px 0;
     margin: 10px 0;
     font-size: 24px;
     cursor: pointer;
