@@ -92,12 +92,10 @@ aside.sidebar {
 
 aside.sidebar:hover {
     width: 15%;
-    background-color: rgba(51, 51, 51, 1);
-    border-right: 2px solid rgba(0, 160, 180, 1);
 }
 
 .menu-icon {
-    padding: 16px 0 16px 0;
+    padding: 20px 0 20px 0;
     margin: 10px 0;
     font-size: 24px;
     cursor: pointer;
@@ -120,12 +118,7 @@ nav ul li a {
     text-decoration: none;
     text-align: center;
     width: 100%;
-    color:rgba(51, 51, 51, 0.8);
-}
-
-nav ul li a:hover {
-    color: white;
-}
+    }
 
 div{
     text-align: center;
