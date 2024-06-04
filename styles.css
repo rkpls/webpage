@@ -109,15 +109,15 @@ nav ul {
 
 nav ul li {
     width: 100%;
+    overflow: hidden;
 }
 
-nav ul li a {
+nav ul li a.menu {
     display: block;
     padding: 16px 0 16px 0;
     text-decoration: none;
     text-align: center;
     width: 100%;
-    overflow: hidden;
     }
 
 div{
