@@ -113,7 +113,7 @@ nav ul li {
 
 nav ul li a {
     display: block;
-    padding: 16px 4px 16px 4px;
+    padding: 16px 0 16px 0;
     text-decoration: none;
     text-align: center;
     width: 100%;
