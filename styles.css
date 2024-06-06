@@ -71,51 +71,6 @@ main {
 }
 
 
-aside.sidebar {
-    z-index: 2;
-    width: 5%;
-    background-color: rgba(51, 51, 51, 1);
-    color: rgba(51, 51, 51, 1);
-    border-right: 2px solid rgba(0, 160, 180, 1);
-    position: fixed;
-    height: 100%;
-    transition: width 0.2s, background-color 0.2s;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    animation: fadeIn 0.2s ease-in-out;
-}
-aside.sidebar:hover {
-    width: 15%;
-    color: white;
-}
-.menu-icon {
-    padding: 20px 0 20px 0;
-    margin: 10px 0;
-    font-size: 24px;
-    cursor: pointer;
-}
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-nav ul li {
-    width: 100%;
-    overflow: hidden;
-}
-nav ul li a{
-    display: block;
-    padding: 16px 0 16px 0;
-    text-decoration: none;
-    text-align: center;
-    width: 100%;
-}
-
-
 div{
     text-align: center;
     margin: auto;
