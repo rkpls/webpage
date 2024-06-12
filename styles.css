@@ -86,7 +86,7 @@ div{
     color: white;
     padding: 20px;
     margin: 20px;
-    border: 2px solid rgb(0, 160, 180);
+    border: 2px solid rgb(0, 160, 180, 1);
     width: 80%;
     max-width: 800px;
     height: auto;
@@ -136,10 +136,6 @@ h3,h4{
 .icon:hover{
     box-shadow: 0 0 12px 4px #000000;
 }
-
-
-
-
 
 
 @keyframes fadeIn {
