@@ -34,7 +34,7 @@ html, body {
 }
 
 body {
-    display: flex;
+    display: flexbox;
     flex-direction: column;
     min-height: 100vh;
 }
@@ -46,7 +46,7 @@ header, footer {
 }
 header{
     z-index: 1;
-    padding: 0.2em 0;
+    padding: 0.1em 0;
     border-bottom: 2px solid rgba(0, 160, 180, 1);
 }
 footer {
@@ -129,23 +129,27 @@ h3,h4{
     box-shadow: 0 0 8px 4px #20202080;
     object-fit: fill;
     overflow: hidden;
-    padding: 4;
+    padding: 4px;
     transition: 0.5s;
 }
 
 .icon:hover{
     box-shadow: 0 0 12px 4px #000000;
+    height: 52px;
+    width: 52px;
+    padding: 0px;
 }
 
 .imgLink{
     width: 400px;
     vertical-align: middle;
     border-radius: 16px;
-    box-shadow: 0 0 12px 6px #20202080;
+    box-shadow: 0 0 12px 4px #20202080;
     transition: 0.5s;
 }
 .imgLink:hover{
-    box-shadow: 0 0 16px 6px #000000;
+    box-shadow: 0 0 16px 4px #000000;
+    width: 420px;
 }
 
 @keyframes fadeIn {
