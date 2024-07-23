@@ -103,6 +103,7 @@ div.menu{
     padding: 16px 0px 16px 0px;
     position: relative;
     text-decoration: none;
+    padding: 0.5em;
 }
 
 div{
