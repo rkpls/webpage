@@ -45,7 +45,7 @@ header, footer {
 }
 header{
     z-index: 1;
-    padding: 0.1em 0;
+    padding: 0.5em 0;
     border-bottom: 2px solid var(--border-color);
 }
 footer {
@@ -54,7 +54,7 @@ footer {
     bottom: 0;
     width: 100%;
     font-size: 1rem;
-    padding: 0.1em 0;
+    padding: 0.5em 0;
     border-top: 2px solid var(--border-color);
 }
 footer .footer-content {
