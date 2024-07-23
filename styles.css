@@ -130,8 +130,8 @@ div{
 }
 
 .box{
-    text-align: left;
-    padding: 12px;
+    text-align: justify; 
+    padding: 2em;
     display: inline-block;
 }
 
