@@ -205,12 +205,12 @@ h3,h4{
 
 @media (min-width: 2560px) {
     html, body, footer{
-        font-size: 1.125rem;
+        font-size: 20px;
     }
 }
 
 @media (min-width: 3840px) {
     html, body, footer{
-        font-size: 1.25rem;
+        font-size: 24px;
     }
 }
