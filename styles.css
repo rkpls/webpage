@@ -195,20 +195,20 @@ h3,h4{
     }
 }
 
-@media (min-width: 2560px) {
+@media (min-width: 600px) {
     html, body {
-        font-size: 18px;
+        font-size: 1rem;
     }
-    footer {
+}
+
+@media (min-width: 2560px) {
+    html, body, footer{
         font-size: 1.125rem;
     }
 }
 
 @media (min-width: 3840px) {
-    html, body {
-        font-size: 20px;
-    }
-    footer {
+    html, body, footer{
         font-size: 1.25rem;
     }
 }
