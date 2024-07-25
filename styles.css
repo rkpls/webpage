@@ -80,12 +80,6 @@ nav{
     width: 48px auto;
     background-color: var(--nav-color);
     height: 100%;
-    opacity: 1;
-    transition: 0.1s;
-}
-
-nav:hover{
-    opacity: 0;
 }
 
 nav .navbar{
@@ -97,8 +91,14 @@ nav .navbar{
 }
 div.menu{
     padding: 20px 8px 20px 8px;
-
+    opacity: 1;
+    transition: 0.1s;
 }
+
+div.menu:hover{
+    opacity: 0;
+}
+
 .navbar .navlinks {
     display: flexbox;
     align-items: center;
