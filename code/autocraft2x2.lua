@@ -31,14 +31,14 @@ while true do
       turtle.transferTo(2,amount)
       turtle.transferTo(5,amount)
       turtle.transferTo(6,amount)
-      turtle.drop()
+      turtle.dropDown()
       turtle.select(craftingCell)
       -- Should be empty!
       turtle.craft()
       turtle.dropUp()
     else
       turtle.suckDown()
-      turtle.drop()
+      turtle.dropDown()
       turtle.select(bufferCell + 1)
       turtle.dropDown()
     end

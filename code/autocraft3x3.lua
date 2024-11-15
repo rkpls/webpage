@@ -1,7 +1,6 @@
 -- Chest Setup: 
 -- Top = Output Chest. Crafted Items Go here
--- Front = Buffer Chest. Turtle will store items there, that it can not yet craft.
--- Below = Input Chest. Put 2x2 Craftable Stuff there.
+-- Below = Input Chest. Put 2x2 Craftable Stuff there. drops excess items back here
 -- Assumes that One Stack of Input will yield less than one stack.
 
 bufferCell = 13
@@ -36,14 +35,14 @@ while true do
       turtle.transferTo(9,amount)
       turtle.transferTo(10,amount)
       turtle.transferTo(11,amount)
-      turtle.drop()
+      turtle.dropDown()
       turtle.select(craftingCell)
       -- Should be empty!
       turtle.craft()
       turtle.dropUp()
     else
       turtle.suckDown()
-      turtle.drop()
+      turtle.dropDown()
       turtle.select(bufferCell + 1)
       turtle.dropDown()
     end
