@@ -1,19 +1,19 @@
 #"HV ZeitRetVal" := RD_LOC_T(#"Lokal Zeit + Datum"); //Lokalzeit auslesen (nur einmal hier da Programmzyklus << 1sek. ist)
 REGION Any Laser 
-    IF "Profinet Geraete Status_DB"."Geraete vorhanden"[4] = TRUE THEN    //Nur ausführen wenn das Geraet auch angeschlossen ist
-        REGION Status                                                   //Region um mehrere Statuswerte aus einem Geraet auseinander halten zu können
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[4] = TRUE THEN    //Nur ausführen wenn das Gerät auch angeschlossen ist
+        REGION Status                                                   //Region um mehrere Statuswerte aus einem Gerät auseinander halten zu können
             IF "Any Laser Status DM" <> #"Any Laser Status"[0] THEN     //Prüfen ob der aktuelle status anders ist als der vorherige
-                FOR #i := #Arraylaenge TO 1 BY -1 DO                     //For um alle Listeneintraege eine Position nach hinten zu schieben
+                FOR #i := #Arraylänge TO 1 BY -1 DO                     //For um alle Listeneinträge eine Position nach hinten zu schieben
                     #"Any Laser Status"[#i] := #"Any Laser Status"[#i - 1];
                     #"Any Laser Status Zeiten"[#i] := #"Any Laser Status Zeiten"[#i - 1];
                 END_FOR;
                 #"Any Laser Status"[0] := "Any Laser Status DM";    //Neuen Status an erste Stelle des Arrays schreiben
                 #"Any Laser Status Zeiten"[0] := #"Lokal Zeit + Datum";
-            END_IF;                                                 //Dieser Vorgang wird für alle Geraete/Status wiederhohlt
+            END_IF;                                                 //Dieser Vorgang wird für alle Geräte/Status wiederhohlt
         END_REGION
         REGION Warning Status
             IF "Any Laser Warning Status DM" <> #"Any Laser Warning Status"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"Any Laser Warning Status"[#i] := #"Any Laser Warning Status"[#i - 1];
                     #"Any Laser Warning Status Zeiten"[#i] := #"Any Laser Warning Status Zeiten"[#i - 1];
                 END_FOR;
@@ -24,10 +24,10 @@ REGION Any Laser
     END_IF;
 END_REGION
 REGION Any Lump
-    IF "Profinet Geraete Status_DB"."Geraete vorhanden"[2] = TRUE THEN 
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[2] = TRUE THEN 
         REGION System Status
             IF "Any In Lump System Status" <> #"Any Lump System Status"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO  
+                FOR #i := #Arraylänge TO 1 BY -1 DO  
                     #"Any Lump System Status"[#i] := #"Any Lump System Status"[#i - 1];
                     #"Any Lump System Status Zeiten"[#i] := #"Any Lump System Status Zeiten"[#i - 1];
                 END_FOR;
@@ -37,7 +37,7 @@ REGION Any Lump
         END_REGION
         REGION Fault Type
             IF "Any In Lump Fault Type" <> #"Any Lump Fault Type"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"Any Lump Fault Type"[#i] := #"Any Lump Fault Type"[#i - 1];
                     #"Any Lump Fault Type Zeiten"[#i] := #"Any Lump Fault Type Zeiten"[#i - 1];
                 END_FOR;
@@ -48,10 +48,10 @@ REGION Any Lump
     END_IF;
 END_REGION
 REGION Any Spark
-    IF "Profinet Geraete Status_DB"."Geraete vorhanden"[5] = TRUE THEN
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[5] = TRUE THEN
         REGION Status Spark
             IF "Any In Spark Status SPARK" <> #"Any Spark Status Spark"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"Any Spark Status Spark"[#i] := #"Any Spark Status Spark"[#i - 1];
                     #"Any Spark Status Spark Zeiten"[#i] := #"Any Spark Status Spark Zeiten"[#i - 1];
                 END_FOR;
@@ -62,10 +62,10 @@ REGION Any Spark
     END_IF;
 END_REGION
 REGION Any Preheater
-    IF "Profinet Geraete Status_DB"."Geraete vorhanden"[7] = TRUE THEN  
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[7] = TRUE THEN  
         REGION Status   
             IF "Any PH Status" <> #"Any Preheater Status"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO  
+                FOR #i := #Arraylänge TO 1 BY -1 DO  
                     #"Any Preheater Status"[#i] := #"Any Preheater Status"[#i - 1];
                     #"Any Preheater Status Zeiten"[#i] := #"Any Preheater Status Zeiten"[#i - 1];
                 END_FOR;
@@ -75,7 +75,7 @@ REGION Any Preheater
         END_REGION
         REGION Warning Status
             IF "Any PH Warning Status" <> #"Any Preheater Warning Status"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"Any Preheater Warning Status"[#i] := #"Any Preheater Warning Status"[#i - 1];
                     #"Any Preheater Warning Status Zeiten"[#i] := #"Any Preheater Warning Status Zeiten"[#i - 1];
                 END_FOR;
@@ -87,10 +87,10 @@ REGION Any Preheater
 END_REGION
 
 REGION Any Xray
-    IF "Profinet Geraete Status_DB"."Geraete vorhanden"[9] = TRUE THEN
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[9] = TRUE THEN
         REGION Status Xray
             IF "Any In Xray Status Xray" <> #"Any Xray Status Xray"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"Any Xray Status Xray"[#i] := #"Any Xray Status Xray"[#i - 1];
                     #"Any Xray Status Xray Zeiten"[#i] := #"Any Xray Status Xray Zeiten"[#i - 1];
                 END_FOR;
@@ -102,10 +102,10 @@ REGION Any Xray
 END_REGION
 
 REGION Any Ecocon
-    IF "Profinet Geraete Status_DB"."Geraete vorhanden"[11] = TRUE THEN
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[11] = TRUE THEN
         REGION Status Ecocon
             IF "Any In Ecocon Status Ecocon" <> #"Any Ecocon Status Ecocon"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"Any Ecocon Status Ecocon"[#i] := #"Any Ecocon Status Ecocon"[#i - 1];
                     #"Any Ecocon Status Ecocon Zeiten"[#i] := #"Any Ecocon Status Ecocon Zeiten"[#i - 1];
                 END_FOR;
@@ -117,10 +117,10 @@ REGION Any Ecocon
 END_REGION
 
 REGION M12 Centerview
-    IF "Profinet Geraete Status_DB"."Geraete vorhanden"[6] = TRUE THEN
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[6] = TRUE THEN
         REGION Status DM
             IF "M12 In CV Byte 2" <> #"M12 Centerview Status DM"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 Centerview Status DM"[#i] := #"M12 Centerview Status DM"[#i - 1];
                     #"M12 Centerview Status DM Zeiten"[#i] := #"M12 Centerview Status DM Zeiten"[#i - 1];
                 END_FOR;
@@ -130,7 +130,7 @@ REGION M12 Centerview
         END_REGION
         REGION Status ECC
             IF "M12 In CV Byte 20" <> #"M12 Centerview Status ECC"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 Centerview Status ECC"[#i] := #"M12 Centerview Status ECC"[#i - 1];
                     #"M12 Centerview Status ECC Zeiten"[#i] := #"M12 Centerview Status ECC Zeiten"[#i - 1];
                 END_FOR;
@@ -140,7 +140,7 @@ REGION M12 Centerview
         END_REGION
         REGION Status SubNet
             IF "M12 In CV Byte 30" <> #"M12 Centerview SubNet"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 Centerview SubNet"[#i] := #"M12 Centerview SubNet"[#i - 1];
                     #"M12 Centerview SubNet Zeiten"[#i] := #"M12 Centerview SubNet Zeiten"[#i - 1];
                 END_FOR;
@@ -150,7 +150,7 @@ REGION M12 Centerview
         END_REGION
         REGION Status Anybus
             IF "M12 In CV Byte 31" <> #"M12 Centerview Anybus"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 Centerview Anybus"[#i] := #"M12 Centerview Anybus"[#i - 1];
                     #"M12 Centerview Anybus Zeiten"[#i] := #"M12 Centerview Anybus Zeiten"[#i - 1];
                 END_FOR;
@@ -161,10 +161,10 @@ REGION M12 Centerview
     END_IF;
 END_REGION
 REGION M12 Laser
-    IF "Profinet Geraete Status_DB"."Geraete vorhanden"[1] = TRUE THEN
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[1] = TRUE THEN
         REGION Status DM
             IF "M12IN_Laser Byte 2" <> #"M12 Laser Status DM"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 Laser Status DM"[#i] := #"M12 Laser Status DM"[#i - 1];
                     #"M12 Laser Status DM Zeiten"[#i] := #"M12 Laser Status DM Zeiten"[#i - 1];
                 END_FOR;
@@ -174,7 +174,7 @@ REGION M12 Laser
         END_REGION
         REGION Status SubNet
             IF "M12IN_Laser Byte 30" <> #"M12 Laser SubNet"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO 
+                FOR #i := #Arraylänge TO 1 BY -1 DO 
                     #"M12 Laser SubNet"[#i] := #"M12 Laser SubNet"[#i - 1];
                     #"M12 Laser SubNet Zeiten"[#i] := #"M12 Laser SubNet Zeiten"[#i - 1];
                 END_FOR;
@@ -184,7 +184,7 @@ REGION M12 Laser
         END_REGION
         REGION Status Anybus
             IF "M12IN_Laser Byte 31" <> #"M12 Laser Anybus"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 Laser Anybus"[#i] := #"M12 Laser Anybus"[#i - 1];
                     #"M12 Laser Anybus Zeiten"[#i] := #"M12 Laser Anybus Zeiten"[#i - 1];
                 END_FOR;
@@ -195,10 +195,10 @@ REGION M12 Laser
     END_IF;
 END_REGION
 REGION M12 Lump
-    IF "Profinet Geraete Status_DB"."Geraete vorhanden"[3] = TRUE THEN
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[3] = TRUE THEN
         REGION Fault Type
             IF "M12 IN Byte 0" <> #"M12 Lump Fault Type"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 Lump Fault Type"[#i] := #"M12 Lump Fault Type"[#i - 1];
                     #"M12 Lump Fault Type Zeiten"[#i] := #"M12 Lump Fault Type Zeiten"[#i - 1];
                 END_FOR;
@@ -208,7 +208,7 @@ REGION M12 Lump
         END_REGION
         REGION Status SubNet
             IF "M12 IN Byte 30" <> #"M12 Lump SubNet"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 Lump SubNet"[#i] := #"M12 Lump SubNet"[#i - 1];
                     #"M12 Lump SubNet Zeiten"[#i] := #"M12 Lump SubNet Zeiten"[#i - 1];
                 END_FOR;
@@ -218,7 +218,7 @@ REGION M12 Lump
         END_REGION
         REGION Status Anybus
             IF "M12 IN Byte 31" <> #"M12 Lump Anybus"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 Lump Anybus"[#i] := #"M12 Lump Anybus"[#i - 1];
                     #"M12 Lump Anybus Zeiten"[#i] := #"M12 Lump Anybus Zeiten"[#i - 1];
                 END_FOR;
@@ -230,10 +230,10 @@ REGION M12 Lump
 END_REGION
 
 REGION M12 XRAY
-    IF "Profinet Geraete Status_DB"."Geraete vorhanden"[8] = TRUE THEN
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[8] = TRUE THEN
         REGION Fault Type
             IF "M12 IN Byte 0" <> #"M12 XRAY Fault Type"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 XRAY Fault Type"[#i] := #"M12 Lump Fault Type"[#i - 1];
                     #"M12 XRAY Fault Type Zeiten"[#i] := #"M12 XRAY Fault Type Zeiten"[#i - 1];
                 END_FOR;
@@ -243,7 +243,7 @@ REGION M12 XRAY
         END_REGION
         REGION Status SubNet
             IF "M12 IN Byte 30" <> #"M12 XRAY SubNet"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 XRAY SubNet"[#i] := #"M12 XRAY SubNet"[#i - 1];
                     #"M12 XRAY SubNet Zeiten"[#i] := #"M12 XRAY SubNet Zeiten"[#i - 1];
                 END_FOR;
@@ -253,7 +253,7 @@ REGION M12 XRAY
         END_REGION
         REGION Status Anybus
             IF "M12 IN Byte 31" <> #"M12 XRAY Anybus"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 XRAY Anybus"[#i] := #"M12 XRAY Anybus"[#i - 1];
                     #"M12 XRAY Anybus Zeiten"[#i] := #"M12 XRAY Anybus Zeiten"[#i - 1];
                 END_FOR;
@@ -265,10 +265,10 @@ REGION M12 XRAY
 END_REGION
 
 REGION M12 ECOCON
-    IF "Profinet Geraete Status_DB"."Geraete vorhanden"[8] = TRUE THEN
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[8] = TRUE THEN
         REGION Fault Type
             IF "M12 IN Byte 0" <> #"M12 ECOCON Fault Type"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 ECOCON Fault Type"[#i] := #"M12 Lump Fault Type"[#i - 1];
                     #"M12 ECOCON Fault Type Zeiten"[#i] := #"M12 ECOCON Fault Type Zeiten"[#i - 1];
                 END_FOR;
@@ -278,7 +278,7 @@ REGION M12 ECOCON
         END_REGION
         REGION Status SubNet
             IF "M12 IN Byte 30" <> #"M12 ECOCON SubNet"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 ECOCON SubNet"[#i] := #"M12 ECOCON SubNet"[#i - 1];
                     #"M12 ECOCON SubNet Zeiten"[#i] := #"M12 ECOCON SubNet Zeiten"[#i - 1];
                 END_FOR;
@@ -288,7 +288,7 @@ REGION M12 ECOCON
         END_REGION
         REGION Status Anybus
             IF "M12 IN Byte 31" <> #"M12 ECOCON Anybus"[0] THEN
-                FOR #i := #Arraylaenge TO 1 BY -1 DO
+                FOR #i := #Arraylänge TO 1 BY -1 DO
                     #"M12 ECOCON Anybus"[#i] := #"M12 ECOCON Anybus"[#i - 1];
                     #"M12 ECOCON Anybus Zeiten"[#i] := #"M12 ECOCON Anybus Zeiten"[#i - 1];
                 END_FOR;
