@@ -1,3 +1,4 @@
+@ -1,50 +0,0 @@
 -- Chest Setup: 
 -- Top = Output Chest. Crafted Items Go here
 -- Below = Input Chest. Put 2x2 Craftable Stuff there. drops excess items back here

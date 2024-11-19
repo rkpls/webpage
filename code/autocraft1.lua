@@ -1,3 +1,4 @@
+@ -1,42 +0,0 @@
 -- Chest Setup: 
 -- Front = Buffer Chest. Turtle will store items there, that it can not yet craft.
 -- Below = Input Chest. Put Craftable Stuff there.
