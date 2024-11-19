@@ -1,0 +1,14 @@
+REGION Any Ecocon
+    IF "Profinet Geräte Status_DB"."Geräte vorhanden"[9] = TRUE THEN
+        REGION Status Ecocon
+            IF "Any In Ecocon Status Ecocon" <> #"Any Ecocon Status Ecocon"[0] THEN
+                FOR #i := #Arraylänge TO 1 BY -1 DO
+                    #"Any Ecocon Status Ecocon"[#i] := #"Any Ecocon Status Ecocon"[#i - 1];
+                    #"Any Ecocon Status Ecocon Zeiten"[#i] := #"Any Ecocon Status Ecocon Zeiten"[#i - 1];
+                END_FOR;
+                #"Any Ecocon Status Ecocon"[0] := "Any In Ecocon Status Ecocon";
+                #"Any Ecocon Status Ecocon Zeiten"[0] := #"Lokal Zeit + Datum";
+            END_IF;
+        END_REGION
+    END_IF;
+END_REGION
