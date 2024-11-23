@@ -42,7 +42,16 @@
         <h2>Raspberry Pi mit Pi-hole</h2>
         <div class="content-layout">
           <div class="text">
-            <p>Ich nutze einen Raspberry Pi am Heimnetzwerk zum blockieren von Trackern, Werbung und Zugriffssperrung von dubiosen Webseiten. Mit dem Dienst <a href="https://pi-hole.net/">Pi-hole</a> können DNS Anfragen jedes Netzwerkteilnehmers die zu domains auf eingepflegten Sperrlisten führen blockiert werden. Blockiert heißt in diesem Fall, dass die Antwort "Webseite nicht verfügbar" zurückgesaendet wird. Damit bleiben content-boxen, die normalerweise Werbeanzeigen beinhalten, leer.</p>
+            <p>
+              Ich nutze einen Raspberry Pi im Heimnetzwerk, um Tracker, Werbung und den Zugriff auf dubiose Webseiten zu blockieren. Mit dem Dienst 
+              <a href="https://pi-hole.net/">Pi-hole</a> können DNS-Anfragen jedes Netzwerkteilnehmers, die zu Domains auf eingepflegten Sperrlisten führen, blockiert werden. 
+              Blockiert bedeutet in diesem Fall, dass die Antwort "Webseite nicht verfügbar" zurückgesendet wird. Dadurch bleiben Content-Boxen, die normalerweise Werbeanzeigen enthalten, leer. 
+              <br> 
+              Vorteile des Ganzen: Es wird Bandbreite eingespart, und die Recherche oder das Lesen von Nachrichten wird fokussierter und produktiver. Die Aufmerksamkeit wird weniger durch Ablenkungen gefährdet.
+              <br> 
+              Zur Einrichtung wird der Raspberry Pi klassisch mit Linux aufgesetzt, und Pi-hole wird installiert und konfiguriert. Danach wird er im Router als bevorzugter DNS-Server festgelegt (sowohl für IPv4 als auch IPv6). 
+              Die lokale Benutzeroberfläche von Pi-hole sollte unbedingt als Lesezeichen gespeichert werden: "raspi-IP/admin/login.php".
+            </p>
           </div>
           <div class="image">
             <img class="imgLink" src="../images/raspi.png" alt="Raspberry Pi Logo">
