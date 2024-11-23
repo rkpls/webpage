@@ -30,4 +30,30 @@ themeToggle.addEventListener('change', () => {
   applyTheme(isLightMode);
   localStorage.setItem('isLightMode', JSON.stringify(isLightMode)); 
 });
+
+
+const links = document.querySelectorAll('a');
+const fadeOverlay = document.getElementById('fade-overlay');
+
+links.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    if (link.target === "_blank" || link.href.startsWith("mailto:")) return;
+    e.preventDefault();
+    fadeOverlay.classList.add('active');
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 100);
+  });
+});
+
+
+setTimeout(() => {
+  const privacyNotice = document.getElementById('privacy-notice');
+  if (privacyNotice) {
+    privacyNotice.style.opacity = '0';
+    setTimeout(() => {
+      privacyNotice.remove();
+    }, 1000);
+  }
+}, 5000);
   
