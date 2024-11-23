@@ -9,7 +9,9 @@ const updateDateTime = () => {
 
 setInterval(updateDateTime, 1000);
 updateDateTime();
-  
+
+
+
 const themeToggle = document.getElementById('theme-toggle');
 
 const applyTheme = (isLightMode) => {
@@ -19,6 +21,31 @@ const applyTheme = (isLightMode) => {
     document.documentElement.classList.remove('light-mode');
   }
 };
+
+const detectOSThemePreference = () => {
+  const prefersLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
+  const savedTheme = localStorage.getItem('isLightMode');
+
+  if (savedTheme !== null) {
+    applyTheme(JSON.parse(savedTheme));
+    themeToggle.checked = JSON.parse(savedTheme);
+  } else {
+    applyTheme(prefersLightMode);
+    themeToggle.checked = prefersLightMode;
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  detectOSThemePreference();
+});
+
+themeToggle.addEventListener('change', () => {
+  const isLightMode = themeToggle.checked;
+  applyTheme(isLightMode);
+  localStorage.setItem('isLightMode', JSON.stringify(isLightMode));
+});
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const isLightMode = JSON.parse(localStorage.getItem('isLightMode')) || false;
@@ -45,6 +72,7 @@ links.forEach((link) => {
     }, 100);
   });
 });
+
 
 
 setTimeout(() => {
