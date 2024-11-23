@@ -231,15 +231,16 @@ main {
 }
 
 #privacy-notice {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
+  position: fixed;
+  bottom: 20px;
+  left: 58%;
   transform: translateX(-50%);
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: rgba(0, 0, 0);
+  color: white;
   padding: 15px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   font-size: 14px;
-  z-index: 20;
+  z-index: 1000;
   opacity: 1;
   transition: opacity 1s ease;
 }
