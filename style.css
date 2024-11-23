@@ -304,6 +304,13 @@ p {
   margin-bottom: 15px; 
 }
 
+pre {
+  display: block;
+  overflow-x: auto;
+  padding: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  max-width: 100%;
+}
 
 
 #privacy-notice {
