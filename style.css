@@ -5,6 +5,15 @@
     box-sizing: border-box;
   }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+  
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Main */
 
 body {
@@ -15,9 +24,14 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
   display: flex;
   height: 100vh;
-  overflow: hidden;
+  overflow-y: scroll;
 }
-  
+
+.content {
+  overflow-y: auto; /* Scrollen nur für den Inhalt aktivieren */
+  height: 100vh; /* Falls nötig, begrenze die Höhe */
+}
+
 :root {
   --bg-color: #2c2c2c;
   --content-bg: #3e3e3e;
@@ -65,10 +79,16 @@ a:hover {
 
 /* Sidebar */
 #sidebar {
-  width: 200px;
+  position: fixed; /* Fix the sidebar position */
+  top: 0; /* Align it to the top of the viewport */
+  left: 0; /* Stick to the left side */
+  height: 100%; /* Extend it to cover the full height of the viewport */
+  width: 200px; /* Keep the specified width */
   background: var(--primary-color);
   transition: background-color 0.2s ease, color 0.2s ease;
   padding: 10px;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+  z-index: 1000; /* Ensure it's above other content */
 }
   
 #sidebar ul {
@@ -87,6 +107,11 @@ a:hover {
   
 /* Header */
 header {
+  position: fixed; /* Fix the header position */
+  top: 0; /* Align it to the top of the viewport */
+  left: 200px; /* Account for the sidebar width */
+  right: 0; /* Stretch it to the right */
+  height: 60px; /* Fixed height for the header */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,6 +119,7 @@ header {
   transition: background-color 0.2s ease, color 0.2s ease;
   padding: 10px 20px;
   border-bottom: 2px solid var(--primary-color);
+  z-index: 1000; /* Ensure it appears above other content */
 }
   
 #header-right {
@@ -153,11 +179,12 @@ input:checked + .slider:before {
   
 /* Content */
 #content {
+  margin-left: 200px; /* Account for the fixed sidebar width */
+  margin-top: 60px; /* Account for the fixed header height */
   flex: 1;
   display: flex;
   flex-direction: column;
-}
-  
+}  
 main {
   display: flex;
   flex-direction: column;
@@ -167,7 +194,7 @@ main {
   align-items: center;
   padding: 20px;
 }
-  
+
 .content-box {
   background: var(--content-bg);
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -229,6 +256,55 @@ main {
 .imgLink:hover{
   box-shadow: 0 0 16px 4px #000000;
 }
+
+/* General list styles */
+ul, ol {
+  margin: 20px 0; /* Add spacing above and below lists */
+  padding-left: 20px; /* Indent the list for readability */
+  list-style-position: outside; /* Ensure bullets/numbers align outside the text */
+  font-size: 16px; /* Adjust text size for readability */
+  line-height: 1.4;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol li {
+  margin-bottom: 10px;
+}
+
+ul li::marker {
+  color: var(--primary-color);
+  font-size: 18px;
+}
+
+ol li::marker {
+  color: var(--accent-color);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h4, p b {
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px; 
+}
+
+
 
 #privacy-notice {
   position: fixed;

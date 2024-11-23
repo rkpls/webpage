@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riko Pals</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../icons/RP.png">
+  <script>
+    const isLightMode = JSON.parse(localStorage.getItem('isLightMode')) || false; if (isLightMode) {document.documentElement.classList.add('light-mode');} 
+  </script>
+</head>
+<body>
+  <div id="fade-overlay"></div>
+  <div id="sidebar">
+    <ul>
+      <li><a href="../pages/home.html">Home</a></li>
+      <li><a href="../pages/me.html">Über mich</a></li>
+      <li><a href="../pages/DIY.html">DIY</a></li>
+      <li><a href="../pages/contact.html">Kontakt</a></li>
+    </ul>
+  </div>
+
+  <div id="content">
+    <header>
+      <h1 id="page-title">DIY</h1>
+      <div id="header-right">
+        <span id="datetime"></span>
+        <label class="theme-switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <div class="content-box">
+        <h2>Anleitung</h2>
+        <div class="content-layout">
+          <div class="text">
+            <p>zum Aufsetzen eines Raspberry Pis 4 zur verwendung mit Pi-hole und mehr.</p>
+          </div>
+        </div>        
+      </div>
+      <div class="content-box">
+        <h3>Raspberry Pi im lokalen Netzwerk einrichten und SSH mit PuTTY nutzen</h3>
+        <br>
+            <h4>1. Hardware (Aufbau und Spezifikationen)</h4>
+            <p>
+              Der Raspberry Pi 4 Modell B mit 2 GB RAM oder besser wird empfohlen. Für alle Modelle sollten passende Kühlkörper und aktive Kühlung (z. B. ein Gehäuse mit integriertem Lüfter) verwendet werden, um Überhitzung zu vermeiden. Der Raspberry Pi benötigt ein USB-C-Netzteil mit mindestens 15 Watt Leistung (z. B. 5 Volt, 3 Ampere). Eine stabile Stromversorgung ist zwingend erforderlich, um Fehler wie Systemabstürze oder Datenverlust zu vermeiden.
+            </p>
+            <p>
+              <b>microSD-Karte:</b> Empfohlen sind microSD-Karten der Klasse A1 oder A2 (mindestens 16 GB, maximal 256 GB). Diese Karten sind für Anwendungen mit hoher Lesegeschwindigkeit optimiert. Vor dem Flashen sollte die microSD-Karte im FAT32-Dateisystem formatiert werden. Für größere Karten (>32 GB) wird ein Tool wie „SD Card Formatter“ empfohlen.
+            </p>
+            <p>
+              <b>Technische Spezifikationen:</b>
+              <ul>
+                <li>Netzteil: 5 Volt, 3 Ampere (oder höher, mindestens 15 Watt)</li>
+                <li>microSD-Karte: Klasse A1/A2, FAT32 formatiert</li>
+                <li>Ethernet: Direktverbindung zum Router empfohlen</li>
+              </ul>
+            </p>
+          
+            <h4>2. Windows (Raspberry Pi OS auf die SD-Karte flashen)</h4>
+            <p>Das <a href="https://www.raspberrypi.com/software/" target="_blank">Raspberry Pi Imager Tool</a> herunterladen und installieren.</p>
+            <p><b>Schritte:</b></p>
+            <ol>
+              <li>Raspberry Pi Imager starten.</li>
+              <li>Betriebssystem auswählen: „Raspberry Pi OS (32-bit)“ auswählen.</li>
+              <li>Speicherziel auswählen: Die microSD-Karte auswählen.</li>
+              <li>SSH aktivieren:
+                <ul>
+                  <li>Die erweiterten Einstellungen (Zahnradsymbol) öffnen.</li>
+                  <li>SSH aktivieren und „Standardbenutzername und Passwort verwenden“ auswählen.</li>
+                  <li>Optional den Hostnamen festlegen, z. B. <code>raspberrypi</code>.</li>
+                </ul>
+              </li>
+              <li>Auf „Schreiben“ klicken, um das Betriebssystem auf die SD-Karte zu flashen.</li>
+              <li>Nach Abschluss die microSD-Karte sicher entfernen und in den Raspberry Pi einsetzen.</li>
+            </ol>
+          
+            <h4>3. PuTTY (SSH-Verbindung und Setup)</h4>
+            <p><b>IP-Adresse des Raspberry Pi im Router finden:</b></p>
+            <ol>
+              <li>Die Benutzeroberfläche des Routers in einem Browser öffnen (z. B. <code>192.168.1.1</code> oder <code>192.168.0.1</code>).</li>
+              <li>Mit den Zugangsdaten (siehe Router-Handbuch) anmelden.</li>
+              <li>In der Liste der verbundenen Geräte den Eintrag <code>raspberrypi</code> suchen.</li>
+              <li>Die angezeigte IP-Adresse des Raspberry Pi (z. B. <code>192.168.1.100</code>) notieren.</li>
+            </ol>
+            <p><b>IP-Adresse im Router als statisch festlegen:</b></p>
+            <ol>
+              <li>Die DHCP-Reservierung oder statische IP-Zuweisung in den Router-Einstellungen öffnen.</li>
+              <li>Den Raspberry Pi hinzufügen:
+                <ul>
+                  <li>Gerätename: <code>raspberrypi</code></li>
+                  <li>MAC-Adresse: (wird in der Geräteliste angezeigt)</li>
+                  <li>Statische IP: Eine feste Adresse festlegen, z. B. <code>192.168.1.100</code>.</li>
+                </ul>
+              </li>
+              <li>Änderungen speichern.</li>
+            </ol>
+            <p><b>Verbindung mit PuTTY herstellen:</b></p>
+            <ol>
+              <li>PuTTY von der <a href="https://www.putty.org/" target="_blank">offiziellen Webseite</a> herunterladen und installieren.</li>
+              <li>PuTTY öffnen.</li>
+              <li>Die IP-Adresse des Raspberry Pi in das Feld „Host Name (or IP address)“ eingeben.</li>
+              <li>Port <code>22</code> verwenden und als Verbindungstyp <code>SSH</code> auswählen.</li>
+              <li>Auf „Open“ klicken, um die Verbindung herzustellen.</li>
+              <li>Nach Aufforderung die Zugangsdaten eingeben:
+                <ul>
+                  <li>Benutzername: <code>pi</code></li>
+                  <li>Standardpasswort: <code>raspberry</code></li>
+                </ul>
+              </li>
+              <li>Das Passwort sofort ändern mit:
+                <pre style="background-color: black; color: white; padding: 5px;">passwd</pre>
+              </li>
+            </ol>
+          
+            <h4>4. Updates, Sicherheit und andere Befehle</h4>
+            <p>Nach der ersten Verbindung ist es wichtig, den Raspberry Pi zu aktualisieren und weitere nützliche Befehle zu kennen:</p>
+            <p><b>Updates und Sicherheit:</b></p>
+            <ul>
+              <li>System aktualisieren:
+                <pre style="background-color: black; color: white; padding: 5px;">sudo apt update<br>sudo apt upgrade -y
+                </pre>
+              </li>
+              <li>Hostnamen ändern:
+                <pre style="background-color: black; color: white; padding: 5px;">sudo nano /etc/hostname
+                </pre>
+              </li>
+              <li>Neustart:
+                <pre style="background-color: black; color: white; padding: 5px;">sudo reboot</pre>
+              </li>
+            </ul>
+            <p><b>Nützliche Befehle:</b></p>
+            <ul>
+              <li>Freier Speicher anzeigen:
+                <pre style="background-color: black; color: white; padding: 5px;">df -h</pre>
+              </li>
+              <li>Netzwerkstatus überprüfen:
+                <pre style="background-color: black; color: white; padding: 5px;">ifconfig</pre>
+              </li>
+              <li>Aktuelle IP-Adresse anzeigen:
+                <pre style="background-color: black; color: white; padding: 5px;">hostname -I</pre>
+              </li>
+              <li>Installierte Pakete auflisten:
+                <pre style="background-color: black; color: white; padding: 5px;">dpkg --get-selections</pre>
+              </li>
+              <li>Prozesse anzeigen:
+                <pre style="background-color: black; color: white; padding: 5px;">top</pre>
+              </li>
+              <li>Datei bearbeiten:
+                <pre style="background-color: black; color: white; padding: 5px;">nano [Dateiname]</pre>
+              </li>
+              <li>System herunterfahren:
+                <pre style="background-color: black; color: white; padding: 5px;">sudo shutdown now</pre>
+              </li>
+              <li>System neu starten:
+                <pre style="background-color: black; color: white; padding: 5px;">sudo reboot</pre>
+              </li>
+            </ul>
+          
+            <h4>Downloads</h4>
+            <ul>
+              <li><a href="https://www.raspberrypi.com/software/" target="_blank">Raspberry Pi Imager</a></li>
+              <li><a href="https://www.putty.org/" target="_blank">PuTTY</a></li>
+            </ul>
+      </div>
+    
+      <div class="content-box">
+        <h3>Pi-hole auf dem Raspberry Pi installieren</h3>
+        <br>
+        <h4>1. Pi-hole installieren</h4>
+        <p>Pi-hole wird über ein einfaches Skript installiert:</p>
+        <ol>
+          <li>SSH-Verbindung zum Raspberry Pi herstellen.</li>
+          <li>Das Installationsskript von Pi-hole ausführen:
+            <pre style="background-color: black; color: white; padding: 5px;">
+      curl -sSL https://install.pi-hole.net | bash
+            </pre>
+          </li>
+          <li>Dem Installationsprozess folgen:
+            <ul>
+              <li>Den Netzwerkadapter auswählen (z. B. eth0 für Ethernet).</li>
+              <li>Die statische IP-Adresse des Raspberry Pi bestätigen.</li>
+              <li>Den Upstream-DNS-Server auswählen (empfohlen: Google, OpenDNS oder Cloudflare).</li>
+              <li>Optional: Blocklisten während der Installation anpassen.</li>
+            </ul>
+          </li>
+          <li>Am Ende der Installation wird ein Admin-Interface-Passwort angezeigt. Dieses notieren.</li>
+        </ol>
+      
+        <h4>2. Pi-hole konfigurieren</h4>
+        <p>Nach der Installation können weitere Einstellungen vorgenommen werden:</p>
+        <ul>
+          <li>Das Admin-Interface im Browser öffnen: 
+            <pre style="background-color: black; color: white; padding: 5px;">http://[IP-Adresse-des-Raspberry-Pi]/admin</pre>
+          </li>
+          <li>Mit dem im Installationsprozess vergebenen Passwort anmelden.</li>
+          <li>Optional das Passwort ändern:
+            <pre style="background-color: black; color: white; padding: 5px;">pihole -a -p</pre>
+          </li>
+          <li>Blocklisten, Whitelist oder Blacklist nach Bedarf anpassen.</li>
+        </ul>
+      
+        <h4>3. Router konfigurieren</h4>
+        <p>Damit Pi-hole als DNS-Server im gesamten Netzwerk verwendet wird:</p>
+        <ol>
+          <li>In die Router-Einstellungen wechseln (z. B. <code>192.168.1.1</code> im Browser eingeben).</li>
+          <li>DNS-Server ändern:
+            <ul>
+              <li>Primärer DNS: Die IP-Adresse des Raspberry Pi (z. B. <code>192.168.1.100</code>).</li>
+              <li>Sekundärer DNS: Einen öffentlichen DNS-Server (z. B. <code>8.8.8.8</code> für Google).</li>
+            </ul>
+          </li>
+          <li>Speichern und die Netzwerkeinstellungen aktualisieren.</li>
+        </ol>
+        <h4>4. Benutzeroberfläche erreichen und Sperrlisten hinzufügen</h4>
+        <p>Nach der Installation kann die Benutzeroberfläche von Pi-hole genutzt werden, um Einstellungen zu verwalten und Sperrlisten hinzuzufügen:</p>
+        <ol>
+          <li>Die Admin-Benutzeroberfläche im Browser öffnen:
+            <pre style="background-color: black; color: white; padding: 5px;">http://[IP-Adresse-des-Raspberry-Pi]/admin</pre>
+          </li>
+          <li>Mit dem Passwort, das während der Installation angezeigt wurde, anmelden. Falls das Passwort vergessen wurde, kann ein neues Passwort gesetzt werden:
+            <pre style="background-color: black; color: white; padding: 5px;">pihole -a -p</pre>
+          </li>
+          <li>Sperrlisten hinzufügen:
+            <ul>
+              <li>Im Admin-Dashboard zu <b>"Group Management" &gt; "Adlists"</b> navigieren.</li>
+              <li>Die URL einer Sperrliste in das Feld "Address" einfügen und auf <b>"Add"</b> klicken.</li>
+              <li>Die Änderungen mit <b>"Update Gravity"</b> übernehmen.</li>
+            </ul>
+          </li>
+          <li>Empfohlene Sperrlisten finden:
+            <ul>
+              <li>Auf der offiziellen Pi-hole GitHub-Seite: <a href="https://github.com/topics/pihole-blocklists" target="_blank">Pi-hole Blocklists auf GitHub</a></li>
+              <li>Weitere Listen z. B. von <a href="https://firebog.net/" target="_blank">Firebog</a>.</li>
+            </ul>
+          </li>
+        </ol>
+        
+        <h4>4. Benutzeroberfläche erreichen und Sperrlisten hinzufügen</h4>
+        <p>Nach der Installation von Pi-hole kann die Benutzeroberfläche genutzt werden, um Sperrlisten hinzuzufügen und weitere Konfigurationen vorzunehmen:</p>
+        <ol>
+          <li>Die Benutzeroberfläche im Browser öffnen:
+            <pre style="background-color: black; color: white; padding: 5px;">http://[IP-Adresse-des-Raspberry-Pi]/admin</pre>
+          </li>
+          <li>Sich mit dem während der Installation generierten Passwort anmelden.</li>
+          <li>Sperrlisten hinzufügen:
+            <ul>
+              <li>Im Menü auf <b>Group Management</b> > <b>Adlists</b> klicken.</li>
+              <li>In das Feld <b>Address</b> eine Sperrliste im Rohformat einfügen, z. B.:
+                <pre style="background-color: black; color: white; padding: 5px;">https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts</pre>
+              </li>
+              <li>Auf <b>Add</b> klicken, um die Liste hinzuzufügen.</li>
+            </ul>
+          </li>
+          <li>Nach dem Hinzufügen die Blocklisten aktualisieren:
+            <pre style="background-color: black; color: white; padding: 5px;">pihole -g</pre>
+          </li>
+        </ol>
+        <p><b>Hinweis:</b> Sperrlisten müssen immer im Rohformat hinzugefügt werden. Weitere Listen können beispielsweise in Foren und auf GitHub gefunden werden.</p>           
+
+        <h4>5. Nützliche Befehle für Pi-hole</h4>
+        <p>Pi-hole kann über die Kommandozeile verwaltet werden. Hier sind einige nützliche Befehle:</p>
+        <ul>
+          <li>Pi-hole Admin-Interface Passwort ändern:
+            <pre style="background-color: black; color: white; padding: 5px;">pihole -a -p</pre>
+          </li>
+          <li>Pi-hole Status prüfen:
+            <pre style="background-color: black; color: white; padding: 5px;">pihole status</pre>
+          </li>
+          <li>DNS-Server aktualisieren:
+            <pre style="background-color: black; color: white; padding: 5px;">pihole restartdns</pre>
+          </li>
+          <li>Blocklisten manuell aktualisieren:
+            <pre style="background-color: black; color: white; padding: 5px;">pihole -g</pre>
+          </li>
+          <li>Pi-hole deaktivieren (für 5 Minuten):
+            <pre style="background-color: black; color: white; padding: 5px;">pihole disable 300</pre>
+          </li>
+          <li>Pi-hole wieder aktivieren:
+            <pre style="background-color: black; color: white; padding: 5px;">pihole enable</pre>
+          </li>
+          <li>Pi-hole neu starten:
+            <pre style="background-color: black; color: white; padding: 5px;">sudo systemctl restart pihole-FTL</pre>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-box">
+        <h3>Node-RED installieren und mit MQTT konfigurieren</h3>
+        <br>
+        <h4>1. Node-RED installieren</h4>
+        <p>Node-RED kann direkt auf einem Raspberry Pi installiert werden. Folgende Schritte ausführen:</p>
+        <ol>
+          <li>SSH-Verbindung zum Raspberry Pi herstellen.</li>
+          <li>Das offizielle Installationsskript ausführen:
+            <pre style="background-color: black; color: white; padding: 5px;">
+      bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/main/deb/update-nodejs-and-nodered)
+            </pre>
+          </li>
+          <li>Die Installation prüfen, indem Node-RED gestartet wird:
+            <pre style="background-color: black; color: white; padding: 5px;">node-red-start</pre>
+          </li>
+          <li>Den Web-Editor von Node-RED im Browser öffnen:
+            <pre style="background-color: black; color: white; padding: 5px;">http://[IP-Adresse-des-Raspberry-Pi]:1880</pre>
+          </li>
+          <li>Node-RED beim Systemstart aktivieren:
+            <pre style="background-color: black; color: white; padding: 5px;">sudo systemctl enable nodered.service</pre>
+          </li>
+        </ol>
+      
+        <h4>2. MQTT-Broker installieren</h4>
+        <p>Ein MQTT-Broker wie Mosquitto ist notwendig, um MQTT mit Node-RED zu verwenden. Die Installation erfolgt wie folgt:</p>
+        <ol>
+          <li>Mosquitto und die zugehörigen Tools installieren:
+            <pre style="background-color: black; color: white; padding: 5px;">
+      sudo apt update
+      sudo apt install -y mosquitto mosquitto-clients
+            </pre>
+          </li>
+          <li>Den Mosquitto-Dienst aktivieren und starten:
+            <pre style="background-color: black; color: white; padding: 5px;">
+      sudo systemctl enable mosquitto
+      sudo systemctl start mosquitto
+            </pre>
+          </li>
+          <li>Die MQTT-Verbindung mit einem Testbefehl prüfen:
+            <pre style="background-color: black; color: white; padding: 5px;">
+      mosquitto_sub -h localhost -t test
+            </pre>
+            (In einem anderen Terminal eine Nachricht senden: <code>mosquitto_pub -h localhost -t test -m "Hello World"</code>)
+          </li>
+        </ol>
+      
+        <h4>3. Weitere nützliche Software installieren</h4>
+        <p>Zusätzlich zu MQTT können folgende Erweiterungen und Tools installiert werden:</p>
+        <ul>
+          <li><b>Node-RED-Dashboard:</b> Für benutzerdefinierte Web-Oberflächen:
+            <pre style="background-color: black; color: white; padding: 5px;">
+      node-red admin install node-red-dashboard
+            </pre>
+          </li>
+          <li><b>Node-RED-Contrib-Home-Assistant:</b> Integration mit Home Assistant:
+            <pre style="background-color: black; color: white; padding: 5px;">
+      node-red admin install node-red-contrib-home-assistant-websocket
+            </pre>
+          </li>
+          <li><b>Node-RED-Contrib-Modbus:</b> Für Modbus-Integration:
+            <pre style="background-color: black; color: white; padding: 5px;">
+      node-red admin install node-red-contrib-modbus
+            </pre>
+          </li>
+          <li><b>Grafana:</b> Für Datenvisualisierung:
+            <pre style="background-color: black; color: white; padding: 5px;">
+      sudo apt install -y grafana
+            </pre>
+          </li>
+          <li><b>InfluxDB:</b> Für die Speicherung von Zeitreihendaten:
+            <pre style="background-color: black; color: white; padding: 5px;">
+      sudo apt install -y influxdb
+      sudo systemctl start influxdb
+      sudo systemctl enable influxdb
+            </pre>
+          </li>
+        </ul>
+      
+        <h4>4. MQTT in Node-RED verwenden</h4>
+        <p>Nach der Installation von MQTT und Node-RED kann eine Verbindung zwischen beiden hergestellt werden:</p>
+        <ol>
+          <li>Im Node-RED-Web-Editor (unter <code>http://[IP-Adresse-des-Raspberry-Pi]:1880</code>) anmelden.</li>
+          <li>Die MQTT-Knoten (Subscribe und Publish) aus der Palette auf das Flow-Feld ziehen.</li>
+          <li>Ein MQTT-Broker einrichten:
+            <ul>
+              <li>Auf den MQTT-Knoten doppelklicken.</li>
+              <li>Die Broker-Details eingeben (z. B. Hostname: <code>localhost</code>, Port: <code>1883</code>).</li>
+              <li>Optional Benutzername und Passwort hinzufügen, falls der Broker gesichert ist.</li>
+            </ul>
+          </li>
+          <li>Einfachen Flow erstellen:
+            <ul>
+              <li>Einen MQTT-Subscribe-Knoten mit einem Debug-Knoten verbinden.</li>
+              <li>Einen MQTT-Publish-Knoten hinzufügen, der Nachrichten an das gleiche Topic sendet.</li>
+            </ul>
+          </li>
+          <li>Den Flow deployen und testen.</li>
+        </ol>
+      
+        <h4>5. Nützliche Befehle</h4>
+        <p>Hier sind einige nützliche Befehle für Node-RED, MQTT und andere Tools:</p>
+        <ul>
+          <li>Node-RED starten:
+            <pre style="background-color: black; color: white; padding: 5px;">node-red-start</pre>
+          </li>
+          <li>Node-RED stoppen:
+            <pre style="background-color: black; color: white; padding: 5px;">node-red-stop</pre>
+          </li>
+          <li>Node-RED-Protokolle anzeigen:
+            <pre style="background-color: black; color: white; padding: 5px;">node-red-log</pre>
+          </li>
+          <li>Mosquitto-Status prüfen:
+            <pre style="background-color: black; color: white; padding: 5px;">sudo systemctl status mosquitto</pre>
+          </li>
+          <li>Grafana starten:
+            <pre style="background-color: black; color: white; padding: 5px;">sudo systemctl start grafana-server</pre>
+          </li>
+          <li>InfluxDB starten:
+            <pre style="background-color: black; color: white; padding: 5px;">sudo systemctl start influxdb</pre>
+          </li>
+        </ul>
+      </div>
+
+    </main>
+
+    <footer>
+      <p>rikopals.com | rikopals.de<br>Powered by <a href="https://www.ionos.de" class="link">Ionos</a> | Kontakt via <a href="mailto:info@rikopals.de">Mail</a></p>
+    </footer>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>
