@@ -14,9 +14,29 @@ const updateDateTime = () => {
 setInterval(updateDateTime, 1000);
 updateDateTime();
   
-// Theme Switcher with Toggle
+// Select the theme toggle input
 const themeToggle = document.getElementById('theme-toggle');
+
+// Function to apply the theme
+const applyTheme = (isLightMode) => {
+  if (isLightMode) {
+    document.body.classList.add('light-mode');
+  } else {
+    document.body.classList.remove('light-mode');
+  }
+};
+
+// Load the saved theme from localStorage when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+  const isLightMode = JSON.parse(localStorage.getItem('isLightMode')) || false; // Default to false (dark mode)
+  applyTheme(isLightMode);
+  themeToggle.checked = isLightMode; // Ensure toggle reflects the current theme
+});
+
+// Add event listener to toggle switch
 themeToggle.addEventListener('change', () => {
-  document.body.classList.toggle('light-mode');
+  const isLightMode = themeToggle.checked;
+  applyTheme(isLightMode);
+  localStorage.setItem('isLightMode', JSON.stringify(isLightMode)); // Save the current theme
 });
   
