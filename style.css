@@ -12,7 +12,7 @@
     line-height: 1.4;
     color: var(--text-color);
     background-color: var(--bg-color);
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
     display: flex;
     height: 100vh;
     overflow: hidden;
@@ -37,7 +37,7 @@
   a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
   }
 
   a:hover {
@@ -48,7 +48,7 @@
   #sidebar {
     width: 200px;
     background: var(--primary-color);
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
     padding: 10px;
   }
   
@@ -72,7 +72,7 @@
     justify-content: space-between;
     align-items: center;
     background: var(--content-bg);
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
     padding: 10px 20px;
     border-bottom: 2px solid var(--primary-color);
   }
@@ -108,7 +108,7 @@
   right: 0;
   bottom: 0;
   background-color: var(--accent-color);
-  transition: 0.4s;
+  transition: 0.2s;
   border-radius: 25px;
 }
 
@@ -120,7 +120,7 @@
   left: 4px;
   bottom: 2.5px;
   background-color: var(--text-color);
-  transition: 0.4s;
+  transition: 0.2s;
   border-radius: 50%;
 }
 
@@ -151,7 +151,7 @@ main {
   
 .content-box {
   background: var(--content-bg);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   border: 2px solid var(--primary-color);
   padding: 20px;
   width: 70%;
@@ -215,7 +215,7 @@ main {
 footer {
   text-align: center;
   background: var(--content-bg);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   padding: 10px;
   position: sticky;
   bottom: 0;

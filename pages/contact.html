@@ -6,6 +6,9 @@
   <title>Riko Pals</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" href="../icons/RP.png">
+  <script>
+    const isLightMode = JSON.parse(localStorage.getItem('isLightMode')) || false; if (isLightMode) {document.documentElement.classList.add('light-mode');} 
+  </script>
 </head>
 <body>
   <div id="sidebar">
