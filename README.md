@@ -1,4 +1,4 @@
 # webpage
 webpage rikopals.de
 
-Is under construction
+Is permanently under construction

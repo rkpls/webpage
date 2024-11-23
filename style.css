@@ -1,0 +1,245 @@
+/* Reset browser defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+/* Main */
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  :root {
+    --bg-color: #2c2c2c;
+    --content-bg: #3e3e3e;
+    --primary-color: #10a090;
+    --accent-color: #ffa500;
+    --text-color: #ffffff;
+  }
+  
+  .light-mode {
+    --bg-color: #ebebeb;
+    --content-bg: #cfcfcf;
+    --primary-color: #ffa500;
+    --accent-color: #10a090;
+    --text-color: #000000;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #2c2c2c;
+  }
+  
+  /* Sidebar */
+  #sidebar {
+    width: 200px;
+    background: var(--primary-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    padding: 10px;
+  }
+  
+  #sidebar ul {
+    list-style: none;
+  }
+  
+  #sidebar li {
+    margin: 20px 0;
+  }
+  
+  #sidebar a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--content-bg);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    padding: 10px 20px;
+    border-bottom: 2px solid var(--primary-color);
+  }
+  
+  #header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  #datetime {
+    margin-right: 20px;
+  }
+  
+/* Theme Switch - Toggle */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--accent-color);
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 2.5px;
+  background-color: var(--text-color);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(25px);
+}
+  
+/* Content */
+#content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+  
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+  
+.content-box {
+  background: var(--content-bg);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  border: 2px solid var(--primary-color);
+  padding: 20px;
+  width: 70%;
+  border-radius: 10px;
+}
+
+.content-box h2 {
+  margin-bottom: 20px;
+}
+
+.content-box .text {
+  text-align: justify;
+}
+  
+.content-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+  
+.content-layout .text {
+  width: auto;
+  margin-right: 20px;
+}
+  
+.content-layout .image img {
+  max-width: 100%;
+  border: 2px solid var(--accent-color);
+}
+
+.icon{
+  height: 48px;
+  width: 48px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px 4px #20202080;
+  object-fit: fill;
+  overflow: hidden;
+  margin: 2px 2px 2px 2px;
+  transition: 0.5s;
+}
+
+.icon:hover{
+  box-shadow: 0 0 12px 4px #000000;
+  height: 52px;
+  width: 52px;
+  margin: 0px 0px 0px 0px;
+}
+
+.imgLink{
+  width: 400px;
+  vertical-align: middle;
+  border-radius: 16px;
+  box-shadow: 0 0 12px 4px #20202080;
+  transition: 0.5s;
+}
+.imgLink:hover{
+  box-shadow: 0 0 16px 4px #000000;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: var(--content-bg);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  padding: 10px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+  
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-layout {
+    flex-direction: column;
+  }
+  
+  .content-layout .text,
+  .content-layout .image {
+    width: 100%;
+  }
+}
+
+/*
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+*/

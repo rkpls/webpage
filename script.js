@@ -1,6 +1,22 @@
-var viewMode = getCookie("view-mode");
-if(viewMode == "desktop"){
-    viewport.setAttribute('content', 'width=1024');
-}else if (viewMode == "mobile"){
-    viewport.setAttribute('content', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no');
-}
+// Update DateTime
+const updateDateTime = () => {
+  const now = new Date();
+  // Format the date dynamically based on the user's locale
+  const options = { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Berlin' };
+  const date = new Intl.DateTimeFormat(navigator.language, options).format(now);
+  // Format the time in 24-hour format dynamically
+  const time = now.toLocaleTimeString(navigator.language, { hour12: false, timeZone: 'Europe/Berlin' });
+  // Combine formatted date and time
+  document.getElementById('datetime').innerText = `${date}, ${time}`;
+};
+
+// Update every second
+setInterval(updateDateTime, 1000);
+updateDateTime();
+  
+// Theme Switcher with Toggle
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('change', () => {
+  document.body.classList.toggle('light-mode');
+});
+  
