@@ -84,7 +84,7 @@
                   </table>
             </div>
             <br>
-              <h3 class="collapsible">Moderator <span class="symbol"> + </span></h3>
+              <h3 class="collapsible">Moderator - Streaminteraktion<span class="symbol"> + </span></h3>
                 <div class="content_collaps">
                     <table>
                         <tr>
@@ -95,46 +95,15 @@
                             <td><code>/pin [Nachricht]</code></td>
                             <td>Eine Nachricht anpinnen</td>
                         </tr>
+
                         <tr>
-                            <td><code>/shoutout [Benutzername]</code></td>
-                            <td>Shoutout an einen Streamer. Generiert Follow Option, angepinnt im Chat.</td>
-                        </tr> 
-                        <tr>
-                            <td><code>/warn [Benutzername] [Grund]</code></td>
-                            <td>Einen Nutzer an die Chatregeln erinnern.</td>
+                            <td><code>/poll</code></td>
+                            <td>Öffnet das Menü für eine Abstimmung.</td>
                         </tr>
                         <tr>
-                            <td><code>/monitor [Benutzername]</code></td>
-                            <td>Die Nachrichten eines Nutzers beobachten.</td>
+                            <td><code>/prediction</code></td>
+                            <td>Öffnet das Menü für eine Vorhersage.</td>
                         </tr>
-                        <tr>
-                            <td><code>/unmonitor [Benutzername]</code></td>
-                            <td>Die Nachrichten eine Nutzers nicht mehr beobachten.</td>
-                        </tr>                           
-                        <tr>
-                            <td><code>/restrict [Benutzername]</code></td>
-                            <td>Die Nachrichten eines Nutzers einschränken.</td>
-                        </tr>
-                        <tr>
-                            <td><code>/unrestrict [Benutzername]</code></td>
-                            <td>Die Nachrichten eine Nutzers nicht mehr einschränken.</td>
-                        </tr>
-                      <tr>
-                          <td><code>/ban [Benutzername] [Grund]</code></td>
-                          <td>Bannt einen Benutzer permanent.</td>
-                      </tr>
-                      <tr>
-                          <td><code>/unban [Benutzername]</code></td>
-                          <td>Hebt einen Ban auf.</td>
-                      </tr>
-                      <tr>
-                          <td><code>/timeout [Benutzername] [Sekunden]</code></td>
-                          <td>Bannt einen Benutzer temporär.</td>
-                      </tr>
-                      <tr>
-                          <td><code>/untimeout [Benutzername]</code></td>
-                          <td>Hebt den Timeout eines Benutzers auf.</td>
-                      </tr>
                       <tr>
                           <td><code>/clear</code></td>
                           <td>Löscht den gesamten Chatverlauf.</td>
@@ -180,14 +149,6 @@
                         <td>Deaktiviert den Schutzmodus.</td>
                     </tr>
                       <tr>
-                          <td><code>/raid [Kanalname]</code></td>
-                          <td>Startet einen Raid zu einem anderen Kanal.</td>
-                      </tr>
-                      <tr>
-                          <td><code>/unraid</code></td>
-                          <td>Hebt einen aktiven Raid auf.</td>
-                      </tr>
-                      <tr>
                           <td><code>/host [Kanalname]</code></td>
                           <td>Hostet einen anderen Kanal.</td>
                       </tr>
@@ -198,6 +159,60 @@
 
                 </table>
             </div>
+            <br>
+              <h3 class="collapsible">Moderator - Nutzerinteraktion<span class="symbol"> + </span></h3>
+                <div class="content_collaps">
+                    <table>
+                        <tr>
+                            <td><code>/shoutout [Benutzername]</code></td>
+                            <td>Shoutout an einen Streamer. Generiert Follow Option, angepinnt im Chat.</td>
+                        </tr> 
+                        <tr>
+                            <td><code>/raid [Kanalname]</code></td>
+                            <td>Startet einen Raid zu einem anderen Kanal.</td>
+                        </tr>
+                        <tr>
+                            <td><code>/unraid</code></td>
+                            <td>Hebt einen aktiven Raid auf.</td>
+                        </tr>
+                        <tr>
+                            <td><code>/warn [Benutzername] [Grund]</code></td>
+                            <td>Einen Nutzer an die Chatregeln erinnern.</td>
+                        </tr>
+                        <tr>
+                            <td><code>/monitor [Benutzername]</code></td>
+                            <td>Die Nachrichten eines Nutzers beobachten.</td>
+                        </tr>
+                        <tr>
+                            <td><code>/unmonitor [Benutzername]</code></td>
+                            <td>Die Nachrichten eine Nutzers nicht mehr beobachten.</td>
+                        </tr>                           
+                        <tr>
+                            <td><code>/restrict [Benutzername]</code></td>
+                            <td>Die Nachrichten eines Nutzers einschränken.</td>
+                        </tr>
+                        <tr>
+                            <td><code>/unrestrict [Benutzername]</code></td>
+                            <td>Die Nachrichten eine Nutzers nicht mehr einschränken.</td>
+                        </tr>
+                      <tr>
+                          <td><code>/timeout [Benutzername] [Sekunden]</code></td>
+                          <td>Bannt einen Benutzer temporär.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/untimeout [Benutzername]</code></td>
+                          <td>Hebt den Timeout eines Benutzers auf.</td>
+                      </tr>
+                      <tr>
+                        <td><code>/ban [Benutzername] [Grund]</code></td>
+                        <td>Bannt einen Benutzer permanent.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/unban [Benutzername]</code></td>
+                        <td>Hebt einen Ban auf.</td>
+                    </tr>
+                </table>
+            </div>            
             <br>
                 <h3>Streamer</h3>
                 <div class="contents" >
@@ -278,14 +293,6 @@
                       <tr>
                           <td><code>!title [Titel]</code></td>
                           <td>Ändert den Stream-Titel.</td>
-                      </tr>
-                      <tr>
-                          <td><code>!poll new [Frage] | [Option 1] | [Option 2] ...</code></td>
-                          <td>Startet eine neue Umfrage mit mehreren Antwortmöglichkeiten.</td>
-                      </tr>
-                      <tr>
-                          <td><code>!poll end</code></td>
-                          <td>Beendet die aktuelle Umfrage und zeigt die Ergebnisse an.</td>
                       </tr>
                       <tr>
                   </table>
