@@ -312,6 +312,39 @@ pre {
   max-width: 100%;
 }
 
+/* Styling table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+table td:first-child {
+  width: 40%;
+  text-align: left;
+  padding: 10px;
+  vertical-align: top;
+  color: #ffffff;
+  font-weight: bold;
+}
+table td:last-child {
+  width: 60%;
+  text-align: left;
+  padding: 10px;
+  vertical-align: top;
+  color: #c0c0c0;
+}
+table tr {
+  border-bottom: 1px solid #222222;
+}
+table tr:nth-child(even) {
+  background-color: #1a1a1a;
+}
+
+table tr:nth-child(odd) {
+  background-color: #101010;
+}
+
+/* footer */
 
 #privacy-notice {
   position: fixed;
