@@ -259,10 +259,10 @@ main {
 
 /* General list styles */
 ul, ol {
-  margin: 20px 0; /* Add spacing above and below lists */
-  padding-left: 20px; /* Indent the list for readability */
-  list-style-position: outside; /* Ensure bullets/numbers align outside the text */
-  font-size: 16px; /* Adjust text size for readability */
+  margin: 20px 0;
+  padding-left: 20px;
+  list-style-position: outside;
+  font-size: 16px;
   line-height: 1.4;
 }
 
@@ -312,15 +312,47 @@ pre {
   max-width: 100%;
 }
 
-/* Initially hidden content */
+/* Styling for the collapsible content */
 .content_collaps {
-  overflow: hidden;
-  height: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 10vh;
   transition: height 0.3s ease-out;
 }
+
+.collapsible {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.collapsible .symbol {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #ccc;
+  transition: transform 0.3s ease;
+}
+.collapsible.active .symbol {
+  transform: rotate(45deg);
+  color: #fff;
+}
+.content_collaps::-webkit-scrollbar {
+  width: 8px;
+}
+.content_collaps::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border-radius: 4px;
+}
+.content_collaps::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
 .content_collaps.open {
+  overflow-y: none;
   height: auto;
 }
+
 
 /* Styling table */
 table {

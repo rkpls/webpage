@@ -93,11 +93,22 @@ document.addEventListener("DOMContentLoaded", () => {
   collapsibles.forEach((header) => {
       header.addEventListener("click", () => {
           const content = header.nextElementSibling;
+          const symbol = header.querySelector(".symbol");
 
-          if (content.style.height) {
-              content.style.height = null;
+          if (content.classList.contains("open")) {
+              // Collapse
+              content.style.height = "16vh";
+              content.style.overflowY = "scroll";
+              content.classList.remove("open");
+              symbol.textContent = "+";
+              header.classList.remove("active");
           } else {
+              // Expand
               content.style.height = content.scrollHeight + "px";
+              content.style.overflowY = "hidden";
+              content.classList.add("open");
+              symbol.textContent = "-";
+              header.classList.add("active");
           }
       });
   });
