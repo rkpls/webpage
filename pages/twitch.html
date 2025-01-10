@@ -43,102 +43,134 @@
           <h2>Twitch-Befehle</h2>
           <div class="content-layout">
               <h3 class="collapsible">Zuschauer</h3>
-              <p>
-                  <ul>
-                      <li><code>/me [Nachricht]</code>: Hebt die Nachricht hervor, indem sie im Farbton deines Benutzernamens erscheint.</li>
-                      <li><code>/w [Benutzername] [Nachricht]</code>: Sendet eine private Nachricht an einen Benutzer.</li>
-                      <li><code>/mods</code>: Zeigt eine Liste der aktuellen Moderatoren im Kanal an.</li>
-                      <li><code>/vips</code>: Zeigt die VIPs des Kanals an.</li>
-                      <li><code>/help</code>: Zeigt eine Liste der verfügbaren Chat-Befehle an.</li>
-                      <li><code>/marker [Beschreibung]</code>: Setzt eine Markierung im VOD mit optionaler Beschreibung (Streamer/Editor).</li>
-                  </ul>
-              </p>
-              <br>
+              <div class="content">
+                  <table>
+                      <tr>
+                          <td><code>/me [Nachricht]</code></td>
+                          <td>Hebt die Nachricht hervor, indem sie im Farbton deines Benutzernamens erscheint.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/w [Benutzername] [Nachricht]</code></td>
+                          <td>Sendet eine private Nachricht an einen Benutzer.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/mods</code></td>
+                          <td>Zeigt eine Liste der aktuellen Moderatoren im Kanal an.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/vips</code></td>
+                          <td>Zeigt die VIPs des Kanals an.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/help</code></td>
+                          <td>Zeigt eine Liste der verfügbaren Chat-Befehle an.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/marker [Beschreibung]</code></td>
+                          <td>Setzt eine Markierung im VOD mit optionaler Beschreibung (Streamer/Editor).</td>
+                      </tr>
+                  </table>
+              </div>
               <h3 class="collapsible">Moderator</h3>
-              <p>
-                  <ul>
-                      <li><code>/ban [Benutzername] [Grund]</code>: Bannt einen Benutzer permanent.</li>
-                      <li><code>/unban [Benutzername]</code>: Hebt einen Ban auf.</li>
-                      <li><code>/timeout [Benutzername] [Sekunden]</code>: Bannt einen Benutzer temporär.</li>
-                      <li><code>/untimeout [Benutzername]</code>: Hebt den Timeout eines Benutzers auf.</li>
-                      <li><code>/clear</code>: Löscht den gesamten Chatverlauf.</li>
-                      <li><code>/slow [Sekunden]</code>: Aktiviert den Slow-Modus (Limitierung der Nachrichten).</li>
-                      <li><code>/slowoff</code>: Deaktiviert den Slow-Modus.</li>
-                      <li><code>/followers [Zeit]</code>: Aktiviert den Follower-Modus (nur Follower mit einer bestimmten Mindestzeit können schreiben).</li>
-                      <li><code>/followersoff</code>: Deaktiviert den Follower-Modus.</li>
-                      <li><code>/subscribers</code>: Aktiviert den Abonnenten-Modus (nur Subs können schreiben).</li>
-                      <li><code>/subscribersoff</code>: Deaktiviert den Abonnenten-Modus.</li>
-                      <li><code>/uniquechat</code>: Aktiviert den Modus, in dem keine duplizierten Nachrichten erlaubt sind.</li>
-                      <li><code>/uniquechatoff</code>: Deaktiviert den Modus für eindeutige Nachrichten.</li>
-                      <li><code>/raid [Kanalname]</code>: Startet einen Raid zu einem anderen Kanal.</li>
-                      <li><code>/unraid</code>: Hebt einen aktiven Raid auf.</li>
-                      <li><code>/host [Kanalname]</code>: Hostet einen anderen Kanal.</li>
-                      <li><code>/unhost</code>: Beendet das Hosting.</li>
-                      <li><code>/mod [Benutzername]</code>: Macht einen Benutzer zum Moderator.</li>
-                      <li><code>/unmod [Benutzername]</code>: Hebt den Moderatorenstatus eines Benutzers auf.</li>
-                      <li><code>/vip [Benutzername]</code>: Verleiht einem Benutzer den VIP-Status.</li>
-                      <li><code>/unvip [Benutzername]</code>: Entfernt den VIP-Status eines Benutzers.</li>
-                      <li><code>/poll</code>: Startet eine Umfrage.</li>
-                      <li><code>/prediction</code>: Startet eine Vorhersage.</li>
-                  </ul>
-              </p>
-              <br>
-              <h3 class="collapsible">Streamer</h3>
-              <p>
-                  <ul>
-                      <li><code>/commercial [Dauer in Sekunden]</code>: Startet eine Werbepause (30, 60, 90, 120, 150 oder 180 Sekunden).</li>
-                      <li><code>/announce [Nachricht]</code>: Hebt eine Nachricht für alle im Chat hervor.</li>
-                      <li><code>/shield</code>: Aktiviert den Schutzmodus, der automatisch strengere Regeln aufstellt.</li>
-                      <li><code>/shieldoff</code>: Deaktiviert den Schutzmodus.</li>
-                  </ul>
-              </p>
-              <br>
-              <h3 class="collapsible">Botspezifisch</h3>
-              <p>
-                  <ul>
-                      <li><code>!commands</code>: Zeigt eine Liste der benutzerdefinierten Befehle.</li>
-                      <li><code>!points</code>: Zeigt die Kanalpunkte eines Benutzers.</li>
-                      <li><code>!top</code>, <code>!rank</code>: Zeigt Bestenlisten an.</li>
-                      <li><code>!lurk</code>, <code>!unlurk</code>: Informiert über das „Lurking“ (passives Zuschauen).</li>
-                      <li><code>!so [Benutzername]</code>: „Shoutout“-Befehl, um einen anderen Streamer zu promoten.</li>
-                  </ul>
-              </p>
-              <br>
-            </div>
-
-            <h2>Nightbot-Befehle</h2>
-            <div class="content-layout">
+              <div class="content">
+                  <table>
+                      <tr>
+                          <td><code>/ban [Benutzername] [Grund]</code></td>
+                          <td>Bannt einen Benutzer permanent.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/unban [Benutzername]</code></td>
+                          <td>Hebt einen Ban auf.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/timeout [Benutzername] [Sekunden]</code></td>
+                          <td>Bannt einen Benutzer temporär.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/untimeout [Benutzername]</code></td>
+                          <td>Hebt den Timeout eines Benutzers auf.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/clear</code></td>
+                          <td>Löscht den gesamten Chatverlauf.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/slow [Sekunden]</code></td>
+                          <td>Aktiviert den Slow-Modus (Limitierung der Nachrichten).</td>
+                      </tr>
+                      <!-- Weitere Befehle -->
+                  </table>
+              </div>
+          </div>
+          
+          <h2>Nightbot-Befehle</h2>
+          <div class="content-layout">
               <h3 class="collapsible">Zuschauer</h3>
-              <p>
-                  <ul>
-                      <li><code>!commands</code>: Zeigt eine Liste der verfügbaren Befehle.</li>
-                      <li><code>!uptime</code>: Zeigt die aktuelle Stream-Laufzeit.</li>
-                      <li><code>!title</code>: Zeigt den aktuellen Stream-Titel an.</li>
-                      <li><code>!game</code>: Zeigt das aktuell gestreamte Spiel an.</li>
-                      <li><code>!lurk</code>: Informiert, dass du im „Lurk“-Modus bist.</li>
-                      <li><code>!unlurk</code>: Informiert, dass du nicht mehr im „Lurk“-Modus bist.</li>
-                      <li><code>!watchtime</code>: Zeigt, wie lange ein Benutzer den Stream gesehen hat.</li>
-                  </ul>
-              </p>
-              <br>
+              <div class="content">
+                  <table>
+                      <tr>
+                          <td><code>!commands</code></td>
+                          <td>Zeigt eine Liste der verfügbaren Befehle.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!uptime</code></td>
+                          <td>Zeigt die aktuelle Stream-Laufzeit.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!title</code></td>
+                          <td>Zeigt den aktuellen Stream-Titel an.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!game</code></td>
+                          <td>Zeigt das aktuell gestreamte Spiel an.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!lurk</code></td>
+                          <td>Informiert, dass du im „Lurk“-Modus bist.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!watchtime</code></td>
+                          <td>Zeigt, wie lange ein Benutzer den Stream gesehen hat.</td>
+                      </tr>
+                  </table>
+              </div>
               <h3 class="collapsible">Moderator</h3>
-              <p>
-                  <ul>
-                      <li><code>!addcom [Befehl] [Nachricht]</code>: Erstellt einen benutzerdefinierten Befehl.</li>
-                      <li><code>!editcom [Befehl] [Nachricht]</code>: Bearbeitet einen bestehenden Befehl.</li>
-                      <li><code>!delcom [Befehl]</code>: Löscht einen benutzerdefinierten Befehl.</li>
-                      <li><code>!game [Spiel]</code>: Ändert das aktuelle Spiel im Stream.</li>
-                      <li><code>!title [Titel]</code>: Ändert den Stream-Titel.</li>
-                      <li><code>!commercial [Sekunden]</code>: Startet eine Werbepause.</li>
-                      <li><code>!winner</code>: Wählt einen zufälligen Gewinner aus dem Chat.</li>
-                      <li><code>!poll</code>: Startet eine Umfrage.</li>
-                      <li><code>!regular [Benutzername]</code>: Fügt einen Benutzer zur Liste der „Regulars“ hinzu.</li>
-                  </ul>
-              </p>
-              <br>
-          </div>        
+              <div class="content">
+                  <table>
+                      <tr>
+                          <td><code>!addcom [Befehl] [Nachricht]</code></td>
+                          <td>Erstellt einen benutzerdefinierten Befehl.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!editcom [Befehl] [Nachricht]</code></td>
+                          <td>Bearbeitet einen bestehenden Befehl.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!delcom [Befehl]</code></td>
+                          <td>Löscht einen benutzerdefinierten Befehl.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!game [Spiel]</code></td>
+                          <td>Ändert das aktuelle Spiel im Stream.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!title [Titel]</code></td>
+                          <td>Ändert den Stream-Titel.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!winner</code></td>
+                          <td>Wählt einen zufälligen Gewinner aus dem Chat.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!poll</code></td>
+                          <td>Startet eine Umfrage.</td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
         </div>
-      </main>      
+      </main>
+          
     <footer>
       <p>rikopals.com | rikopals.de<br>Powered by <a href="https://www.ionos.de" class="link">Ionos</a> | Kontakt via <a href="mailto:info@rikopals.de">Mail</a></p>
     </footer>
