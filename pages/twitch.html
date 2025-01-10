@@ -42,7 +42,7 @@
         <div class="content-box">
           <h2>Twitch-Befehle</h2>
           <div class="content-layout">
-              <h3>Zuschauer</h3>
+              <h3 class="collapsible">Zuschauer</h3>
               <p>
                   <ul>
                       <li><code>/me [Nachricht]</code>: Hebt die Nachricht hervor, indem sie im Farbton deines Benutzernamens erscheint.</li>
@@ -53,7 +53,8 @@
                       <li><code>/marker [Beschreibung]</code>: Setzt eine Markierung im VOD mit optionaler Beschreibung (Streamer/Editor).</li>
                   </ul>
               </p>
-              <h3>Moderator</h3>
+              <br>
+              <h3 class="collapsible">Moderator</h3>
               <p>
                   <ul>
                       <li><code>/ban [Benutzername] [Grund]</code>: Bannt einen Benutzer permanent.</li>
@@ -81,7 +82,8 @@
                       <li><code>/prediction</code>: Startet eine Vorhersage.</li>
                   </ul>
               </p>
-              <h3>Streamer</h3>
+              <br>
+              <h3 class="collapsible">Streamer</h3>
               <p>
                   <ul>
                       <li><code>/commercial [Dauer in Sekunden]</code>: Startet eine Werbepause (30, 60, 90, 120, 150 oder 180 Sekunden).</li>
@@ -90,7 +92,8 @@
                       <li><code>/shieldoff</code>: Deaktiviert den Schutzmodus.</li>
                   </ul>
               </p>
-              <h3>Botspezifisch</h3>
+              <br>
+              <h3 class="collapsible">Botspezifisch</h3>
               <p>
                   <ul>
                       <li><code>!commands</code>: Zeigt eine Liste der benutzerdefinierten Befehle.</li>
@@ -100,7 +103,12 @@
                       <li><code>!so [Benutzername]</code>: „Shoutout“-Befehl, um einen anderen Streamer zu promoten.</li>
                   </ul>
               </p>
-              <h3>Nightbot (Zuschauer)</h3>
+              <br>
+            </div>
+
+            <h2>Nightbot-Befehle</h2>
+            <div class="content-layout">
+              <h3 class="collapsible">Zuschauer</h3>
               <p>
                   <ul>
                       <li><code>!commands</code>: Zeigt eine Liste der verfügbaren Befehle.</li>
@@ -112,7 +120,8 @@
                       <li><code>!watchtime</code>: Zeigt, wie lange ein Benutzer den Stream gesehen hat.</li>
                   </ul>
               </p>
-              <h3>Nightbot (Moderator)</h3>
+              <br>
+              <h3 class="collapsible">Moderator</h3>
               <p>
                   <ul>
                       <li><code>!addcom [Befehl] [Nachricht]</code>: Erstellt einen benutzerdefinierten Befehl.</li>
@@ -126,6 +135,7 @@
                       <li><code>!regular [Benutzername]</code>: Fügt einen Benutzer zur Liste der „Regulars“ hinzu.</li>
                   </ul>
               </p>
+              <br>
           </div>        
         </div>
       </main>      
