@@ -28,8 +28,7 @@ body {
 }
 
 .content {
-  overflow-y: auto; /* Scrollen nur für den Inhalt aktivieren */
-  height: 100vh; /* Falls nötig, begrenze die Höhe */
+  height: auto;
 }
 
 :root {
@@ -56,20 +55,6 @@ a {
 
 a:hover {
   color: #2c2c2c;
-}
-
-.collapsible {
-  cursor: pointer;
-  user-select: none;
-}
-.content {
-  display: none;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-}
-.content.open {
-  height: auto;
 }
 
 
