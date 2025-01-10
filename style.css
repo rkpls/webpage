@@ -179,7 +179,6 @@ input:checked + .slider:before {
   
 /* Content */
 #content {
-  margin-left: 200px;
   margin-top: 60px;
   flex: 1;
   display: flex;
