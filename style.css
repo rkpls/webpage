@@ -187,6 +187,7 @@ input:checked + .slider:before {
 }  
 main {
   display: flex;
+  width: auto;
   flex-direction: column;
   gap: 20px;
   flex: 1;
