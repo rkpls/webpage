@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riko Pals</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../icons/RP.png">
+  <script>
+    const isLightMode = JSON.parse(localStorage.getItem('isLightMode')) || false; if (isLightMode) {document.documentElement.classList.add('light-mode');} 
+  </script>
+</head>
+<body>
+  <div id="fade-overlay"></div>
+  <div id="sidebar"> 
+    <ul>
+      <li><a href="../pages/home.html">Home</a></li>
+      <li><a href="../pages/me.html">Über mich</a></li>
+      <li>
+        <a href="../pages/DIY.html">DIY</a>
+        <ul>
+          <li><a href="../pages/raspi.html">Raspberry Pi</a></li>
+        </ul>
+      </li>
+      <li><a href="../pages/contact.html">Kontakt</a></li>
+    </ul> 
+  </div>
+
+  <div id="content">
+    <header>
+      <h1 id="page-title">Kontakt</h1>
+      <div id="header-right">
+        <span id="datetime"></span>
+        <label class="theme-switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </header>
+    <main>
+        <div class="content-box">
+          <h2>Twitch-Befehle</h2>
+          <div class="content-layout">
+              <h3>Zuschauer</h3>
+              <p>
+                  <ul>
+                      <li><code>/me [Nachricht]</code>: Hebt die Nachricht hervor, indem sie im Farbton deines Benutzernamens erscheint.</li>
+                      <li><code>/w [Benutzername] [Nachricht]</code>: Sendet eine private Nachricht an einen Benutzer.</li>
+                      <li><code>/mods</code>: Zeigt eine Liste der aktuellen Moderatoren im Kanal an.</li>
+                      <li><code>/vips</code>: Zeigt die VIPs des Kanals an.</li>
+                      <li><code>/help</code>: Zeigt eine Liste der verfügbaren Chat-Befehle an.</li>
+                      <li><code>/marker [Beschreibung]</code>: Setzt eine Markierung im VOD mit optionaler Beschreibung (Streamer/Editor).</li>
+                  </ul>
+              </p>
+              <h3>Moderator</h3>
+              <p>
+                  <ul>
+                      <li><code>/ban [Benutzername] [Grund]</code>: Bannt einen Benutzer permanent.</li>
+                      <li><code>/unban [Benutzername]</code>: Hebt einen Ban auf.</li>
+                      <li><code>/timeout [Benutzername] [Sekunden]</code>: Bannt einen Benutzer temporär.</li>
+                      <li><code>/untimeout [Benutzername]</code>: Hebt den Timeout eines Benutzers auf.</li>
+                      <li><code>/clear</code>: Löscht den gesamten Chatverlauf.</li>
+                      <li><code>/slow [Sekunden]</code>: Aktiviert den Slow-Modus (Limitierung der Nachrichten).</li>
+                      <li><code>/slowoff</code>: Deaktiviert den Slow-Modus.</li>
+                      <li><code>/followers [Zeit]</code>: Aktiviert den Follower-Modus (nur Follower mit einer bestimmten Mindestzeit können schreiben).</li>
+                      <li><code>/followersoff</code>: Deaktiviert den Follower-Modus.</li>
+                      <li><code>/subscribers</code>: Aktiviert den Abonnenten-Modus (nur Subs können schreiben).</li>
+                      <li><code>/subscribersoff</code>: Deaktiviert den Abonnenten-Modus.</li>
+                      <li><code>/uniquechat</code>: Aktiviert den Modus, in dem keine duplizierten Nachrichten erlaubt sind.</li>
+                      <li><code>/uniquechatoff</code>: Deaktiviert den Modus für eindeutige Nachrichten.</li>
+                      <li><code>/raid [Kanalname]</code>: Startet einen Raid zu einem anderen Kanal.</li>
+                      <li><code>/unraid</code>: Hebt einen aktiven Raid auf.</li>
+                      <li><code>/host [Kanalname]</code>: Hostet einen anderen Kanal.</li>
+                      <li><code>/unhost</code>: Beendet das Hosting.</li>
+                      <li><code>/mod [Benutzername]</code>: Macht einen Benutzer zum Moderator.</li>
+                      <li><code>/unmod [Benutzername]</code>: Hebt den Moderatorenstatus eines Benutzers auf.</li>
+                      <li><code>/vip [Benutzername]</code>: Verleiht einem Benutzer den VIP-Status.</li>
+                      <li><code>/unvip [Benutzername]</code>: Entfernt den VIP-Status eines Benutzers.</li>
+                      <li><code>/poll</code>: Startet eine Umfrage.</li>
+                      <li><code>/prediction</code>: Startet eine Vorhersage.</li>
+                  </ul>
+              </p>
+              <h3>Streamer</h3>
+              <p>
+                  <ul>
+                      <li><code>/commercial [Dauer in Sekunden]</code>: Startet eine Werbepause (30, 60, 90, 120, 150 oder 180 Sekunden).</li>
+                      <li><code>/announce [Nachricht]</code>: Hebt eine Nachricht für alle im Chat hervor.</li>
+                      <li><code>/shield</code>: Aktiviert den Schutzmodus, der automatisch strengere Regeln aufstellt.</li>
+                      <li><code>/shieldoff</code>: Deaktiviert den Schutzmodus.</li>
+                  </ul>
+              </p>
+              <h3>Botspezifisch</h3>
+              <p>
+                  <ul>
+                      <li><code>!commands</code>: Zeigt eine Liste der benutzerdefinierten Befehle.</li>
+                      <li><code>!points</code>: Zeigt die Kanalpunkte eines Benutzers.</li>
+                      <li><code>!top</code>, <code>!rank</code>: Zeigt Bestenlisten an.</li>
+                      <li><code>!lurk</code>, <code>!unlurk</code>: Informiert über das „Lurking“ (passives Zuschauen).</li>
+                      <li><code>!so [Benutzername]</code>: „Shoutout“-Befehl, um einen anderen Streamer zu promoten.</li>
+                  </ul>
+              </p>
+          </div>        
+        </div>
+      </main>
+      
+
+    <footer>
+      <p>rikopals.com | rikopals.de<br>Powered by <a href="https://www.ionos.de" class="link">Ionos</a> | Kontakt via <a href="mailto:info@rikopals.de">Mail</a></p>
+    </footer>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>
