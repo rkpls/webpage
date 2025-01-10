@@ -179,8 +179,8 @@ input:checked + .slider:before {
   
 /* Content */
 #content {
-  margin-left: 200px; /* Account for the fixed sidebar width */
-  margin-top: 60px; /* Account for the fixed header height */
+  margin-left: 200px;
+  margin-top: 60px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -312,6 +312,16 @@ pre {
   max-width: 100%;
 }
 
+/* Initially hidden content */
+.content_collaps {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease-out;
+}
+.content_collaps.open {
+  height: auto;
+}
+
 /* Styling table */
 table {
   width: 100%;
@@ -323,7 +333,7 @@ table td:first-child {
   text-align: left;
   padding: 10px;
   vertical-align: top;
-  color: #ffffff;
+  color: var(--text-color);
   font-weight: bold;
 }
 table td:last-child {
@@ -331,17 +341,17 @@ table td:last-child {
   text-align: left;
   padding: 10px;
   vertical-align: top;
-  color: #c0c0c0;
+  color: var(--text-color);
 }
 table tr {
   border-bottom: 1px solid #222222;
 }
 table tr:nth-child(even) {
-  background-color: #1a1a1a;
+  background-color: #1a1a1a10;
 }
 
 table tr:nth-child(odd) {
-  background-color: #101010;
+  background-color: #10101010;
 }
 
 /* footer */

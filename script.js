@@ -84,3 +84,21 @@ setTimeout(() => {
     }, 1000);
   }
 }, 5000);
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const collapsibles = document.querySelectorAll(".collapsible");
+
+  collapsibles.forEach((header) => {
+      header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+
+          if (content.style.height) {
+              content.style.height = null;
+          } else {
+              content.style.height = content.scrollHeight + "px";
+          }
+      });
+  });
+});
