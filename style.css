@@ -79,16 +79,16 @@ a:hover {
 
 /* Sidebar */
 #sidebar {
-  position: fixed; /* Fix the sidebar position */
-  top: 0; /* Align it to the top of the viewport */
-  left: 0; /* Stick to the left side */
-  height: 100%; /* Extend it to cover the full height of the viewport */
-  width: 200px; /* Keep the specified width */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width:  16%;
   background: var(--primary-color);
   transition: background-color 0.2s ease, color 0.2s ease;
   padding: 10px;
-  overflow-y: auto; /* Enable scrolling if content overflows */
-  z-index: 1000; /* Ensure it's above other content */
+  overflow-y: hidden ;
+  z-index: 20;
 }
   
 #sidebar ul {
@@ -107,11 +107,11 @@ a:hover {
   
 /* Header */
 header {
-  position: fixed; /* Fix the header position */
-  top: 0; /* Align it to the top of the viewport */
-  left: 200px; /* Account for the sidebar width */
-  right: 0; /* Stretch it to the right */
-  height: 60px; /* Fixed height for the header */
+  position: fixed;
+  top: 0;
+  left: 16%;
+  right: 0;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -119,7 +119,7 @@ header {
   transition: background-color 0.2s ease, color 0.2s ease;
   padding: 10px 20px;
   border-bottom: 2px solid var(--primary-color);
-  z-index: 1000; /* Ensure it appears above other content */
+  z-index: 10;
 }
   
 #header-right {
@@ -179,7 +179,8 @@ input:checked + .slider:before {
   
 /* Content */
 #content {
-  margin-top: 60px;
+  margin-top: 80px;
+  margin-left: 16%;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -316,7 +317,7 @@ pre {
 .content_collaps {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 20vh;
+  height: 12vh;
   transition: height 0.3s ease-out;
 }
 
