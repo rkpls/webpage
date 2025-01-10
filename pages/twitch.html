@@ -11,20 +11,21 @@
   </script>
 </head>
 <body>
-  <div id="fade-overlay"></div>
-  <div id="sidebar"> 
-    <ul>
-      <li><a href="../pages/home.html">Home</a></li>
-      <li><a href="../pages/me.html">Über mich</a></li>
-      <li>
-        <a href="../pages/DIY.html">DIY</a>
-        <ul>
-          <li><a href="../pages/raspi.html">Raspberry Pi</a></li>
-        </ul>
-      </li>
-      <li><a href="../pages/contact.html">Kontakt</a></li>
-    </ul> 
-  </div>
+    <div id="fade-overlay"></div>
+    <div id="sidebar"> 
+      <ul>
+        <li><a href="../pages/home.html">Home</a></li>
+        <li><a href="../pages/me.html">Über mich</a></li>
+        <li>
+          <a href="../pages/DIY.html">DIY</a>
+          <ul>
+            <li><a href="../pages/raspi.html">Raspberry Pi</a></li>
+          </ul>
+        </li>
+        <li><a href="../pages/twitch.html">Twitch Chat Befehle</a></li>
+        <li><a href="../pages/contact.html">Kontakt</a></li>
+      </ul> 
+    </div>
 
   <div id="content">
     <header>
@@ -99,11 +100,35 @@
                       <li><code>!so [Benutzername]</code>: „Shoutout“-Befehl, um einen anderen Streamer zu promoten.</li>
                   </ul>
               </p>
+              <h3>Nightbot (Zuschauer)</h3>
+              <p>
+                  <ul>
+                      <li><code>!commands</code>: Zeigt eine Liste der verfügbaren Befehle.</li>
+                      <li><code>!uptime</code>: Zeigt die aktuelle Stream-Laufzeit.</li>
+                      <li><code>!title</code>: Zeigt den aktuellen Stream-Titel an.</li>
+                      <li><code>!game</code>: Zeigt das aktuell gestreamte Spiel an.</li>
+                      <li><code>!lurk</code>: Informiert, dass du im „Lurk“-Modus bist.</li>
+                      <li><code>!unlurk</code>: Informiert, dass du nicht mehr im „Lurk“-Modus bist.</li>
+                      <li><code>!watchtime</code>: Zeigt, wie lange ein Benutzer den Stream gesehen hat.</li>
+                  </ul>
+              </p>
+              <h3>Nightbot (Moderator)</h3>
+              <p>
+                  <ul>
+                      <li><code>!addcom [Befehl] [Nachricht]</code>: Erstellt einen benutzerdefinierten Befehl.</li>
+                      <li><code>!editcom [Befehl] [Nachricht]</code>: Bearbeitet einen bestehenden Befehl.</li>
+                      <li><code>!delcom [Befehl]</code>: Löscht einen benutzerdefinierten Befehl.</li>
+                      <li><code>!game [Spiel]</code>: Ändert das aktuelle Spiel im Stream.</li>
+                      <li><code>!title [Titel]</code>: Ändert den Stream-Titel.</li>
+                      <li><code>!commercial [Sekunden]</code>: Startet eine Werbepause.</li>
+                      <li><code>!winner</code>: Wählt einen zufälligen Gewinner aus dem Chat.</li>
+                      <li><code>!poll</code>: Startet eine Umfrage.</li>
+                      <li><code>!regular [Benutzername]</code>: Fügt einen Benutzer zur Liste der „Regulars“ hinzu.</li>
+                  </ul>
+              </p>
           </div>        
         </div>
-      </main>
-      
-
+      </main>      
     <footer>
       <p>rikopals.com | rikopals.de<br>Powered by <a href="https://www.ionos.de" class="link">Ionos</a> | Kontakt via <a href="mailto:info@rikopals.de">Mail</a></p>
     </footer>
