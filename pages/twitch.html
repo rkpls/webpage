@@ -199,35 +199,48 @@
               <div class="content">
                   <table>
                       <tr>
-                          <td><code>!addcom [Befehl] [Nachricht]</code></td>
+                          <td><code>!commands add [Befehl] [Nachricht]</code></td>
                           <td>Erstellt einen benutzerdefinierten Befehl.</td>
                       </tr>
                       <tr>
-                          <td><code>!editcom [Befehl] [Nachricht]</code></td>
+                          <td><code>!commands edit [Befehl] [Nachricht]</code></td>
                           <td>Bearbeitet einen bestehenden Befehl.</td>
                       </tr>
                       <tr>
-                          <td><code>!delcom [Befehl]</code></td>
+                          <td><code>!commands delete [Befehl]</code></td>
                           <td>Löscht einen benutzerdefinierten Befehl.</td>
                       </tr>
                       <tr>
                           <td><code>!game [Spiel]</code></td>
-                          <td>Ändert das aktuelle Spiel im Stream.</td>
+                          <td>Ändert das aktuell gestreamte Spiel im Stream.</td>
                       </tr>
                       <tr>
                           <td><code>!title [Titel]</code></td>
                           <td>Ändert den Stream-Titel.</td>
                       </tr>
                       <tr>
-                          <td><code>!poll</code></td>
-                          <td>Startet eine Umfrage.</td>
+                          <td><code>!poll new [Frage] | [Option 1] | [Option 2] ...</code></td>
+                          <td>Startet eine neue Umfrage mit mehreren Antwortmöglichkeiten.</td>
                       </tr>
                       <tr>
-                          <td><code>!regular [Benutzername]</code></td>
+                          <td><code>!poll end</code></td>
+                          <td>Beendet die aktuelle Umfrage und zeigt die Ergebnisse an.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!winner</code></td>
+                          <td>Wählt zufällig einen Gewinner aus dem Chat.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!regular add [Benutzername]</code></td>
                           <td>Fügt einen Benutzer zur Liste der „Regulars“ hinzu.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!regular remove [Benutzername]</code></td>
+                          <td>Entfernt einen Benutzer aus der Liste der „Regulars“.</td>
                       </tr>
                   </table>
               </div>
+              
           </div>
         </div>
       </main>
