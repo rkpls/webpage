@@ -58,6 +58,11 @@ a:hover {
   color: #2c2c2c;
 }
 
+.collapsible {
+  cursor: pointer;
+  user-select: none;
+}
+
 /* Fade overlay */
 #fade-overlay {
   position: fixed;
