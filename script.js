@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const symbol = header.querySelector(".symbol");
           if (content.classList.contains("open")) {
               // Collapse
-              content.style.height = "12vh";
+              content.style.height = "0vh";
               content.style.overflowY = "scroll";
               content.classList.remove("open");
               symbol.textContent = "+";
