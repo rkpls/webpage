@@ -42,7 +42,7 @@
         <div class="content-box">
           <h2>Twitch-Befehle</h2>
           <div class="content-layout">
-              <h3 class="collapsible">Zuschauer</h3>
+              <h3>Zuschauer</h3>
               <div class="content">
                   <table>
                       <tr>
@@ -67,11 +67,11 @@
                       </tr>
                       <tr>
                           <td><code>/marker [Beschreibung]</code></td>
-                          <td>Setzt eine Markierung im VOD mit optionaler Beschreibung (Streamer/Editor).</td>
+                          <td>Setzt eine Markierung im VOD mit optionaler Beschreibung.</td>
                       </tr>
                   </table>
               </div>
-              <h3 class="collapsible">Moderator</h3>
+              <h3>Moderator</h3>
               <div class="content">
                   <table>
                       <tr>
@@ -98,14 +98,51 @@
                           <td><code>/slow [Sekunden]</code></td>
                           <td>Aktiviert den Slow-Modus (Limitierung der Nachrichten).</td>
                       </tr>
-                      <!-- Weitere Befehle -->
+                      <tr>
+                          <td><code>/slowoff</code></td>
+                          <td>Deaktiviert den Slow-Modus.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/followers [Zeit]</code></td>
+                          <td>Aktiviert den Follower-Modus (nur Follower mit einer bestimmten Mindestzeit können schreiben).</td>
+                      </tr>
+                      <tr>
+                          <td><code>/followersoff</code></td>
+                          <td>Deaktiviert den Follower-Modus.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/subscribers</code></td>
+                          <td>Aktiviert den Abonnenten-Modus (nur Subs können schreiben).</td>
+                      </tr>
+                      <tr>
+                          <td><code>/subscribersoff</code></td>
+                          <td>Deaktiviert den Abonnenten-Modus.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/raid [Kanalname]</code></td>
+                          <td>Startet einen Raid zu einem anderen Kanal.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/unraid</code></td>
+                          <td>Hebt einen aktiven Raid auf.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/host [Kanalname]</code></td>
+                          <td>Hostet einen anderen Kanal.</td>
+                      </tr>
+                      <tr>
+                          <td><code>/unhost</code></td>
+                          <td>Beendet das Hosting.</td>
+                      </tr>
                   </table>
               </div>
           </div>
-          
+        </div>
+        <div class="content-box">
+          <p></p>
           <h2>Nightbot-Befehle</h2>
           <div class="content-layout">
-              <h3 class="collapsible">Zuschauer</h3>
+              <h3>Zuschauer</h3>
               <div class="content">
                   <table>
                       <tr>
@@ -129,12 +166,12 @@
                           <td>Informiert, dass du im „Lurk“-Modus bist.</td>
                       </tr>
                       <tr>
-                          <td><code>!watchtime</code></td>
-                          <td>Zeigt, wie lange ein Benutzer den Stream gesehen hat.</td>
+                          <td><code>!unlurk</code></td>
+                          <td>Informiert, dass du nicht mehr im „Lurk“-Modus bist.</td>
                       </tr>
                   </table>
               </div>
-              <h3 class="collapsible">Moderator</h3>
+              <h3>Moderator</h3>
               <div class="content">
                   <table>
                       <tr>
@@ -158,12 +195,12 @@
                           <td>Ändert den Stream-Titel.</td>
                       </tr>
                       <tr>
-                          <td><code>!winner</code></td>
-                          <td>Wählt einen zufälligen Gewinner aus dem Chat.</td>
-                      </tr>
-                      <tr>
                           <td><code>!poll</code></td>
                           <td>Startet eine Umfrage.</td>
+                      </tr>
+                      <tr>
+                          <td><code>!regular [Benutzername]</code></td>
+                          <td>Fügt einen Benutzer zur Liste der „Regulars“ hinzu.</td>
                       </tr>
                   </table>
               </div>
