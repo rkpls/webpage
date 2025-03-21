@@ -9,22 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const content = document.getElementById('content');
 
   menuToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
+    const isOpen = sidebar.classList.toggle('active');
     content.classList.toggle('shifted');
+
+    // Icon ändern (☰ ↔ ✕)
+    menuToggle.innerHTML = isOpen ? '&times;' : '&#9776;';
   });
 
+  // Klick außerhalb schließt Sidebar nur auf mobilen Geräten
   document.addEventListener('click', function (e) {
     const isMobile = window.innerWidth < 957;
-    if (
-      isMobile &&
-      !sidebar.contains(e.target) &&
-      !menuToggle.contains(e.target)
-    ) {
+    const clickedOutside = !sidebar.contains(e.target) && !menuToggle.contains(e.target);
+
+    if (isMobile && clickedOutside) {
       sidebar.classList.remove('active');
       content.classList.remove('shifted');
+      menuToggle.innerHTML = '&#9776;'; // Zurück zu ☰
     }
   });
-  
 
   // Theme-Toggle
   const themeToggle = document.getElementById('theme-toggle');
@@ -97,3 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Hilfsfunktion für Datum & Uhrzeit
+function updateDateTime() {
+  const now = new Date();
+  const datetimeElement = document.getElementById('datetime');
+  if (datetimeElement) {
+    const dateString = now.toLocaleDateString('de-DE');
+    const timeString = now.toLocaleTimeString('de-DE');
+    datetimeElement.textContent = `${dateString} – ${timeString}`;
+  }
+}
