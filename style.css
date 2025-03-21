@@ -286,13 +286,17 @@ h4, p b {
 p {
   margin-bottom: 15px; 
 }
-
 pre {
   display: block;
   overflow-x: auto;
+  white-space: pre-wrap; /* NEU: umbrechbar bei Bedarf */
+  word-wrap: break-word; /* unterstützt Zeilenumbruch */
   padding: 5px;
   font-family: 'Courier New', Courier, monospace;
   max-width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
 }
 
 /* Styling for the collapsible content */
