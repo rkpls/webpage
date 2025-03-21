@@ -289,8 +289,8 @@ p {
 pre {
   display: block;
   overflow-x: auto;
-  white-space: pre-wrap; /* NEU: umbrechbar bei Bedarf */
-  word-wrap: break-word; /* unterstützt Zeilenumbruch */
+  white-space: pre-wrap;
+  word-wrap: break-word;
   padding: 5px;
   font-family: 'Courier New', Courier, monospace;
   max-width: 100%;
