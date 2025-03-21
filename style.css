@@ -77,32 +77,48 @@ a:hover {
   pointer-events: all;
 }
 
-/* Sidebar */
+/* Hamburger button styling */
+#menu-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 30;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: var(--text-color);
+  cursor: pointer;
+  display: none; /* Nur auf kleinen Bildschirmen sichtbar */
+}
+
+/* Sidebar default (sichtbar auf Desktop) */
 #sidebar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  width:  16%;
+  width: 16%;
   background: var(--primary-color);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.3s ease;
   padding: 10px;
-  overflow-y: hidden ;
+  overflow-y: auto;
   z-index: 20;
 }
-  
-#sidebar ul {
-  list-style: none;
-}
-  
-#sidebar li {
-  margin: 20px 0;
-}
-  
-#sidebar a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: bold;
+
+/* Responsive */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 250px;
+    transform: translateX(-100%); /* Ausblenden */
+  }
+
+  #sidebar.active {
+    transform: translateX(0); /* Sichtbar */
+  }
+
+  #menu-toggle {
+    display: block;
+  }
 }
   
 /* Header */

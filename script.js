@@ -11,6 +11,20 @@ setInterval(updateDateTime, 1000);
 updateDateTime();
 
 
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.getElementById('sidebar');
+
+menuToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+
+document.addEventListener('click', function(e) {
+  if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+    sidebar.classList.remove('active');
+  }
+});
+
+
 
 const themeToggle = document.getElementById('theme-toggle');
 
@@ -111,3 +125,5 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
+
