@@ -80,8 +80,8 @@ a:hover {
 /* Hamburger button styling */
 #menu-toggle {
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: 18px;
+  left: 36px;
   z-index: 30;
   background: none;
   border: none;
@@ -97,18 +97,23 @@ a:hover {
   top: 0;
   left: 0;
   height: 100%;
-  width: 16%;
+  width: 182px;
+  padding-top: 96px;
   background: var(--primary-color);
   transition: transform 0.3s ease;
   padding: 10px;
   overflow-y: auto;
   z-index: 20;
 }
+#sidebar div {
+  list-style: none;
+  padding-top: 96px;
+}
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 956px) {
   #sidebar {
-    width: 250px;
+    width: 182px;
     transform: translateX(-100%); /* Ausblenden */
   }
 
@@ -125,7 +130,7 @@ a:hover {
 header {
   position: fixed;
   top: 0;
-  left: 16%;
+  left: 0;
   right: 0;
   height: 80px;
   display: flex;
@@ -137,7 +142,10 @@ header {
   border-bottom: 2px solid var(--primary-color);
   z-index: 10;
 }
-  
+#page-title {
+  padding-left: 196px;
+}
+
 #header-right {
   display: flex;
   align-items: center;
@@ -145,6 +153,7 @@ header {
   
 #datetime {
   margin-right: 20px;
+  margin-left: 20px;
 }
   
 /* Theme Switch - Toggle */
@@ -196,7 +205,6 @@ input:checked + .slider:before {
 /* Content */
 #content {
   margin-top: 80px;
-  margin-left: 16%;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -217,7 +225,7 @@ main {
   transition: background-color 0.2s ease, color 0.2s ease;
   border: 2px solid var(--primary-color);
   padding: 20px;
-  width: 70%;
+  width: 80%;
   border-radius: 10px;
 }
 
@@ -429,19 +437,52 @@ footer {
   position: sticky;
   bottom: 0;
   width: 100%;
+  border-top: 2px solid var(--primary-color);
 }
-  
-/* Responsive Design */
-@media (max-width: 768px) {
-  .content-layout {
-    flex-direction: column;
-  }
-  
-  .content-layout .text,
-  .content-layout .image {
-    width: 100%;
+
+/* Standardwerte */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 182px; /* Breiter machen bei mobiler Darstellung */
+  background: var(--primary-color);
+  padding: 10px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 20;
+}
+
+#sidebar.active {
+  transform: translateX(0);
+}
+
+/* Toggle Button */
+#menu-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 30;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Content-Bereich verschieben */
+#content {
+  transition: margin-left 0.3s ease;
+}
+
+/* Für Mobile */
+@media (max-width: 955px) {
+  #content.shifted {
+    margin-left: 182px; /* exakt wie Sidebar-Breite */
   }
 }
+
 
 /*
 

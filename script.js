@@ -13,9 +13,11 @@ updateDateTime();
 
 const menuToggle = document.getElementById('menu-toggle');
 const sidebar = document.getElementById('sidebar');
+const content = document.getElementById('content');
 
 menuToggle.addEventListener('click', () => {
   sidebar.classList.toggle('active');
+  content.classList.toggle('shifted');
 });
 
 document.addEventListener('click', function(e) {
@@ -23,7 +25,6 @@ document.addEventListener('click', function(e) {
     sidebar.classList.remove('active');
   }
 });
-
 
 
 const themeToggle = document.getElementById('theme-toggle');
@@ -86,7 +87,6 @@ links.forEach((link) => {
     }, 100);
   });
 });
-
 
 
 setTimeout(() => {
