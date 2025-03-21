@@ -14,11 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('click', function (e) {
-    if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+    const isMobile = window.innerWidth < 957;
+    if (
+      isMobile &&
+      !sidebar.contains(e.target) &&
+      !menuToggle.contains(e.target)
+    ) {
       sidebar.classList.remove('active');
       content.classList.remove('shifted');
     }
   });
+  
 
   // Theme-Toggle
   const themeToggle = document.getElementById('theme-toggle');
