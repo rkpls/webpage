@@ -159,7 +159,14 @@ input:checked + .slider:before {
   flex: 1;
   display: flex;
   flex-direction: column;
-}  
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+}
+
+#content.shifted {
+  margin-left: 182px;
+}
+
 main {
   display: flex;
   width: auto;
@@ -425,14 +432,26 @@ footer {
   padding-top: 96px;
 }
 
-/* Standard: Sidebar sichtbar auf Desktop */
+/* === DESKTOP === */
 @media (min-width: 957px) {
+  #content {
+    margin-left: 182px;
+  }
+
+  #content.shifted {
+    margin-left: 182px;
+  }
+
   #sidebar {
-    transform: translateX(0); /* Immer sichtbar */
+    transform: translateX(0);
+  }
+
+  #menu-toggle {
+    display: none;
   }
 }
 
-/* === MOBILE-ONLY === */
+/* === MOBILE === */
 @media (max-width: 956px) {
   #menu-toggle {
     display: block;

@@ -1,129 +1,93 @@
-
-const updateDateTime = () => {
-  const now = new Date();
-  const options = { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Berlin' };
-  const date = new Intl.DateTimeFormat(navigator.language, options).format(now);
-  const time = now.toLocaleTimeString(navigator.language, { hour12: false, timeZone: 'Europe/Berlin' });
-  document.getElementById('datetime').innerText = `${date}, ${time}`;
-};
-
-setInterval(updateDateTime, 1000);
-updateDateTime();
-
-
-const menuToggle = document.getElementById('menu-toggle');
-const sidebar = document.getElementById('sidebar');
-const content = document.getElementById('content');
-
-menuToggle.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
-  content.classList.toggle('shifted');
-});
-
-document.addEventListener('click', function(e) {
-  if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
-    sidebar.classList.remove('active');
-  }
-});
-
-
-const themeToggle = document.getElementById('theme-toggle');
-
-const applyTheme = (isLightMode) => {
-  if (isLightMode) {
-    document.documentElement.classList.add('light-mode');
-  } else {
-    document.documentElement.classList.remove('light-mode');
-  }
-};
-
-const detectOSThemePreference = () => {
-  const prefersLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
-  const savedTheme = localStorage.getItem('isLightMode');
-
-  if (savedTheme !== null) {
-    applyTheme(JSON.parse(savedTheme));
-    themeToggle.checked = JSON.parse(savedTheme);
-  } else {
-    applyTheme(prefersLightMode);
-    themeToggle.checked = prefersLightMode;
-  }
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-  detectOSThemePreference();
-});
+  // Datum & Uhrzeit initialisieren
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
 
-themeToggle.addEventListener('change', () => {
-  const isLightMode = themeToggle.checked;
-  applyTheme(isLightMode);
-  localStorage.setItem('isLightMode', JSON.stringify(isLightMode));
-});
+  // Sidebar öffnen/schließen
+  const menuToggle = document.getElementById('menu-toggle');
+  const sidebar = document.getElementById('sidebar');
+  const content = document.getElementById('content');
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const isLightMode = JSON.parse(localStorage.getItem('isLightMode')) || false;
-  themeToggle.checked = isLightMode;
-});
-
-themeToggle.addEventListener('change', () => {
-  const isLightMode = themeToggle.checked;
-  applyTheme(isLightMode);
-  localStorage.setItem('isLightMode', JSON.stringify(isLightMode)); 
-});
-
-
-const links = document.querySelectorAll('a');
-const fadeOverlay = document.getElementById('fade-overlay');
-
-links.forEach((link) => {
-  link.addEventListener('click', (e) => {
-    if (link.target === "_blank" || link.href.startsWith("mailto:")) return;
-    e.preventDefault();
-    fadeOverlay.classList.add('active');
-    setTimeout(() => {
-      window.location.href = link.href;
-    }, 100);
+  menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    content.classList.toggle('shifted');
   });
-});
 
+  document.addEventListener('click', function (e) {
+    if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+      sidebar.classList.remove('active');
+      content.classList.remove('shifted');
+    }
+  });
 
-setTimeout(() => {
-  const privacyNotice = document.getElementById('privacy-notice');
-  if (privacyNotice) {
-    privacyNotice.style.opacity = '0';
-    setTimeout(() => {
-      privacyNotice.remove();
-    }, 1000);
-  }
-}, 5000);
+  // Theme-Toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  const applyTheme = (isLightMode) => {
+    if (isLightMode) {
+      document.documentElement.classList.add('light-mode');
+    } else {
+      document.documentElement.classList.remove('light-mode');
+    }
+  };
 
+  const savedTheme = localStorage.getItem('isLightMode');
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  const isLightMode = savedTheme !== null ? JSON.parse(savedTheme) : prefersLight;
 
+  themeToggle.checked = isLightMode;
+  applyTheme(isLightMode);
 
-document.addEventListener("DOMContentLoaded", () => {
+  themeToggle.addEventListener('change', () => {
+    const isLight = themeToggle.checked;
+    localStorage.setItem('isLightMode', JSON.stringify(isLight));
+    applyTheme(isLight);
+  });
+
+  // Link-Übergang mit Fade
+  const links = document.querySelectorAll('a');
+  const fadeOverlay = document.getElementById('fade-overlay');
+
+  links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      if (link.target === "_blank" || link.href.startsWith("mailto:")) return;
+      e.preventDefault();
+      fadeOverlay.classList.add('active');
+      setTimeout(() => {
+        window.location.href = link.href;
+      }, 100);
+    });
+  });
+
+  // Datenschutz-Hinweis entfernen
+  setTimeout(() => {
+    const privacyNotice = document.getElementById('privacy-notice');
+    if (privacyNotice) {
+      privacyNotice.style.opacity = '0';
+      setTimeout(() => {
+        privacyNotice.remove();
+      }, 1000);
+    }
+  }, 5000);
+
+  // Collapsibles
   const collapsibles = document.querySelectorAll(".collapsible");
   collapsibles.forEach((header) => {
-      header.addEventListener("click", () => {
-          const content = header.nextElementSibling;
-          const symbol = header.querySelector(".symbol");
-          if (content.classList.contains("open")) {
-              // Collapse
-              content.style.height = "0vh";
-              content.style.overflowY = "scroll";
-              content.classList.remove("open");
-              symbol.textContent = "+";
-              header.classList.remove("active");
-          } else {
-              // Expand
-              content.style.height = content.scrollHeight + "px";
-              content.style.overflowY = "hidden";
-              content.classList.add("open");
-              symbol.textContent = "-";
-              header.classList.add("active");
-          }
-      });
+    header.addEventListener("click", () => {
+      const content = header.nextElementSibling;
+      const symbol = header.querySelector(".symbol");
+      if (content.classList.contains("open")) {
+        content.style.height = "0vh";
+        content.style.overflowY = "scroll";
+        content.classList.remove("open");
+        symbol.textContent = "+";
+        header.classList.remove("active");
+      } else {
+        content.style.height = content.scrollHeight + "px";
+        content.style.overflowY = "hidden";
+        content.classList.add("open");
+        symbol.textContent = "-";
+        header.classList.add("active");
+      }
+    });
   });
 });
-
-
