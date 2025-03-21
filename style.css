@@ -164,7 +164,7 @@ input:checked + .slider:before {
 }
 
 #content.shifted {
-  margin-left: 182px;
+  margin-left: 224px;
 }
 
 main {
@@ -245,7 +245,7 @@ ul, ol {
   margin: 20px 0;
   padding-left: 20px;
   list-style-position: outside;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 1.4;
 }
 
@@ -286,6 +286,7 @@ h4, p b {
 p {
   margin-bottom: 15px; 
 }
+
 pre {
   display: block;
   overflow-x: auto;
@@ -422,7 +423,7 @@ footer {
   top: 0;
   left: 0;
   height: 100%;
-  width: 182px;
+  width: 224px;
   background: var(--primary-color);
   padding: 10px;
   padding-top: 96px; /* Abstand nach oben */
@@ -437,13 +438,13 @@ footer {
 }
 
 /* === DESKTOP === */
-@media (min-width: 957px) {
+@media (min-width: 1025px) {
   #content {
-    margin-left: 182px;
+    margin-left: 224px;
   }
 
   #content.shifted {
-    margin-left: 182px;
+    margin-left: 224px;
   }
 
   #sidebar {
@@ -456,13 +457,13 @@ footer {
 }
 
 /* === MOBILE === */
-@media (max-width: 956px) {
+@media (max-width: 1024px) {
   #content {
     margin-left: 0;
   }
 
   #content.shifted {
-    margin-left: 182px; /* Nur wenn Sidebar geöffnet */
+    margin-left: 224px; /* Nur wenn Sidebar geöffnet */
   }
 
   #sidebar {
