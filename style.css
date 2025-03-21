@@ -453,23 +453,24 @@ footer {
 
 /* === MOBILE === */
 @media (max-width: 956px) {
-  #menu-toggle {
-    display: block;
+  #content {
+    margin-left: 0;
+  }
+
+  #content.shifted {
+    margin-left: 182px; /* Nur wenn Sidebar geöffnet */
   }
 
   #sidebar {
     transform: translateX(-100%);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: none;
-  }
-  
-  #sidebar.active {
-    transform: translateX(0);
-    box-shadow: 4px 0 8px rgba(0,0,0,0.3); /* leichter Tiefeneffekt */
   }
 
-  #content.shifted {
-    margin-left: 182px; /* Sidebar-Breite */
+  #sidebar.active {
+    transform: translateX(0);
+  }
+
+  #menu-toggle {
+    display: block;
   }
 }
 
