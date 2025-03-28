@@ -229,16 +229,21 @@ main {
   margin: 0px 0px 0px 0px;
 }
 
-.imgLink{
-  width: 96px;
+.imgLink {
+  width: auto;
+  min-width: 128px;
+  max-width: 100%;
+  height: auto;
   vertical-align: middle;
   border-radius: 16px;
   box-shadow: 0 0 12px 4px #20202080;
   transition: 0.5s;
 }
-.imgLink:hover{
+
+.imgLink:hover {
   box-shadow: 0 0 16px 4px #000000;
 }
+
 
 /* General list styles */
 ul, ol {

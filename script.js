@@ -98,6 +98,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Dynamisches Padding für #page-title bei kleiner Bildschirmbreite
+  function adjustPageTitlePadding() {
+    const pageTitle = document.getElementById('page-title');
+    if (!pageTitle) return;
+
+    if (window.innerWidth < 957) {
+      pageTitle.style.paddingLeft = '4px';
+    } else {
+      pageTitle.style.paddingLeft = '224px';
+    }
+  }
+
+  // Initial aufrufen
+  adjustPageTitlePadding();
+
+  // Auch bei Fenstergröße-Änderung
+  window.addEventListener('resize', adjustPageTitlePadding);
 });
 
 // Hilfsfunktion für Datum & Uhrzeit
