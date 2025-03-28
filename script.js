@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!pageTitle) return;
 
     if (window.innerWidth < 957) {
-      pageTitle.style.paddingLeft = '4px';
+      pageTitle.style.paddingLeft = '64px';
     } else {
       pageTitle.style.paddingLeft = '224px';
     }
